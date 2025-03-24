@@ -1,9 +1,7 @@
-<script setup>
-import Intro from './components/Intro.vue'
-</script>
+<script setup></script>
 
 <template>
-  <Intro />
+    <RouterView />
 </template>
 
 <style scoped></style>

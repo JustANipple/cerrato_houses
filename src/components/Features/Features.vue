@@ -1,6 +1,6 @@
 <script setup>
-import Feature from './icons/Features/Feature.vue'
 import { FaBicycle } from 'vue-icons-plus/fa'
+import Feature from './Feature.vue'
 </script>
 
 <template>
