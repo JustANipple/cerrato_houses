@@ -1,0 +1,145 @@
+<script setup>
+import { FaBed, FaBath, FaExpandArrowsAlt } from 'vue-icons-plus/fa'
+
+const props = defineProps({
+    image: {
+        type: String,
+        required: true,
+    },
+    price: {
+        type: String,
+        required: true,
+    },
+    title: {
+        type: String,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    beds: {
+        type: String,
+        required: true,
+    },
+    baths: {
+        type: String,
+        required: true,
+    },
+    sqft: {
+        type: String,
+        required: true,
+    },
+})
+</script>
+
+<template>
+    <div class="house">
+        <div class="imageContainer">
+            <img :src="image" alt="house" />
+        </div>
+        <div class="content">
+            <p class="pricePar">
+                From <span class="price">{{ price }}€</span> night
+            </p>
+            <div class="body">
+                <h3 class="title">{{ title }}</h3>
+                <p class="address">{{ address }}</p>
+            </div>
+            <hr class="divider" />
+            <div class="info">
+                <div class="beds">
+                    <FaBed />
+                    <p>{{ beds }} bedroom</p>
+                </div>
+                <div class="baths">
+                    <FaBath />
+                    <p>{{ baths }} bathroom</p>
+                </div>
+                <div class="sqft">
+                    <FaExpandArrowsAlt />
+                    <p>{{ sqft }} sqft</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+.house {
+    padding-inline: var(--mobile-padding-inline);
+    display: grid;
+}
+
+.imageContainer {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.content {
+    padding: 1.5rem 1rem;
+    position: relative;
+    z-index: 0;
+    top: -1rem;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: grid;
+    row-gap: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.pricePar {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.body {
+    display: grid;
+    row-gap: 0.25rem;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700px;
+}
+
+.address {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.divider {
+    border-bottom: unset;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.info div svg {
+    height: 16px;
+    fill: var(--primary-color);
+}
+
+.info div p {
+    font-size: 10px;
+    font-weight: 400;
+}
+</style>
