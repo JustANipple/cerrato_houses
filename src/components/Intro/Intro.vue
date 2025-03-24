@@ -19,6 +19,7 @@
     padding-inline: var(--mobile-padding-inline);
     background-color: var(--secondary-color);
     display: grid;
+    justify-items: center;
     row-gap: 1rem;
 }
 
@@ -26,6 +27,7 @@
     display: grid;
     row-gap: 0.5rem;
     color: var(--tertiary-color);
+    width: 100%;
 }
 
 h1 {
@@ -47,10 +49,12 @@ button {
     max-width: fit-content;
     padding-block: 0.25rem;
     padding-inline: 1rem;
+    margin-right: auto;
 }
 
 .isometric {
     margin-top: 1rem;
-    height: 232px;
+    height: 226px;
+    width: 311px;
 }
 </style>
