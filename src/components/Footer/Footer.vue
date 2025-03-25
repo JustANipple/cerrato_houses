@@ -9,34 +9,36 @@ import {
 
 <template>
     <footer class="footer">
-        <div class="logo">
-            <img
-                src="/logo.svg"
-                alt="cerrato houses logo"
-                class="logoImg"
-            />
-            <p>Cerrato Houses</p>
-        </div>
-        <div class="socials">
-            <div class="social">
-                <a href="https://www.google.com/">
-                    <FaInstagram size="18" />
-                </a>
+        <div class="header">
+            <div class="logo">
+                <img
+                    src="/logo.svg"
+                    alt="cerrato houses logo"
+                    class="logoImg"
+                />
+                <p>Cerrato Houses</p>
             </div>
-            <div class="social">
-                <a href="https://www.google.com/">
-                    <FaFacebook size="18" />
-                </a>
-            </div>
-            <div class="social">
-                <a href="https://www.google.com/">
-                    <FaAirbnb size="18" />
-                </a>
-            </div>
-            <div class="social">
-                <a href="https://www.google.com/"
-                    ><FaTwitter size="18"
-                /></a>
+            <div class="socials">
+                <div class="social">
+                    <a href="https://www.google.com/">
+                        <FaInstagram size="18" />
+                    </a>
+                </div>
+                <div class="social">
+                    <a href="https://www.google.com/">
+                        <FaFacebook size="18" />
+                    </a>
+                </div>
+                <div class="social">
+                    <a href="https://www.google.com/">
+                        <FaAirbnb size="18" />
+                    </a>
+                </div>
+                <div class="social">
+                    <a href="https://www.google.com/"
+                        ><FaTwitter size="18"
+                    /></a>
+                </div>
             </div>
         </div>
         <div class="linksContainer">
@@ -58,7 +60,7 @@ import {
 <style scoped>
 .footer {
     background-origin: var(--tertiary-color);
-    padding-top: 2rem;
+    padding-block: 2rem;
     display: grid;
     row-gap: 1rem;
 }
@@ -126,9 +128,31 @@ import {
 }
 
 .copyright {
-    padding-top: 4rem;
+    padding-top: 2rem;
     font-size: 12px;
     font-weight: 500;
     text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        padding-inline: var(--desktop-padding-inline);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--secondary-color);
+    }
+
+    .linksContainer {
+        place-content: flex-start;
+        text-align: left;
+    }
+
+    .copyright {
+        padding-top: 1rem;
+    }
 }
 </style>

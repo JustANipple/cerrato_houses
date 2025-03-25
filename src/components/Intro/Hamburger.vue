@@ -64,4 +64,10 @@ function switchOpen() {
     filter: brightness(0) saturate(100%) invert(13%) sepia(1%)
         saturate(2660%) hue-rotate(295deg) brightness(99%) contrast(86%);
 }
+
+@media screen and (min-width: 1024px) {
+    .button {
+        display: none;
+    }
+}
 </style>

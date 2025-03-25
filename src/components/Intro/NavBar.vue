@@ -78,4 +78,18 @@ function handleOpen(value) {
         transform: translateY(-100%);
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .logo {
+        height: 64px;
+    }
+
+    .navEnterActive {
+        animation: unset;
+    }
+
+    .navLeaveActive {
+        animation: unset;
+    }
+}
 </style>

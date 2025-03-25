@@ -79,4 +79,18 @@ const props = defineProps({
     max-width: fit-content;
     border-radius: 5px;
 }
+
+@media screen and (min-width: 1024px) {
+    .feature {
+        row-gap: 2rem;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
 </style>

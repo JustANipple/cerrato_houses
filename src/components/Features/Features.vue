@@ -54,4 +54,28 @@ import Feature from './Feature.vue'
     border-top: 1px solid var(--primary-color);
     border-bottom: unset;
 }
+
+@media screen and (min-width: 1024px) {
+    .featureSection {
+        padding-block: 5rem;
+        padding-inline: var(--desktop-padding-inline);
+        place-content: center;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .features {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .divider {
+        border-color: var(--primary-color);
+        border-right: unset;
+    }
+}
 </style>

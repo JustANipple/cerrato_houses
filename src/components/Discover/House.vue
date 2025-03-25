@@ -67,7 +67,6 @@ const props = defineProps({
 
 <style scoped>
 .house {
-    padding-inline: var(--mobile-padding-inline);
     display: grid;
 }
 
@@ -141,5 +140,42 @@ const props = defineProps({
 .info div p {
     font-size: 10px;
     font-weight: 400;
+}
+
+@media screen and (min-width: 1024px) {
+    .house {
+        max-width: 450px;
+    }
+
+    .imageContainer {
+        height: 250px;
+    }
+
+    .content {
+        row-gap: 1rem;
+    }
+
+    .pricePar {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .price {
+        font-weight: 500;
+    }
+
+    .title {
+        font-size: 22px;
+        font-weight: 700px;
+    }
+
+    .address {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .info div p {
+        font-size: 12px;
+    }
 }
 </style>

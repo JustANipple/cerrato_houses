@@ -45,7 +45,29 @@ h2 {
 }
 
 .houses {
+    padding-inline: var(--mobile-padding-inline);
     display: grid;
     row-gap: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .discover {
+        padding-inline: var(--desktop-padding-inline);
+        place-content: center;
+        padding-bottom: 8rem;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .houses {
+        padding-inline: unset;
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+    }
 }
 </style>

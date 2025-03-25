@@ -3,20 +3,17 @@
 <template>
     <ul class="navList">
         <hr class="divider" />
-        <RouterLink to="/" class="item">
-            <li>Home</li>
-        </RouterLink>
         <RouterLink to="/bikes" class="item">
             <li>Bikes</li>
         </RouterLink>
-        <RouterLink to="/faqs" class="item">
-            <li>Faqs</li>
+        <RouterLink to="/houseOne" class="item">
+            <li>Casa di guarene 1</li>
+        </RouterLink>
+        <RouterLink to="/houseTwo" class="item">
+            <li>Casa di guarene 2</li>
         </RouterLink>
         <RouterLink to="/contacts" class="item">
             <li>Contacts</li>
-        </RouterLink>
-        <RouterLink to="/privacy" class="item">
-            <li>Privacy policy</li>
         </RouterLink>
     </ul>
 </template>
@@ -31,7 +28,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgb(204, 204, 183);
+    background-color: var(--tertiary-color);
     padding-block: 5.875rem;
     padding-inline: var(--mobile-padding-inline);
     z-index: 1;
@@ -54,5 +51,29 @@
 
 .item li {
     padding-block: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .navList {
+        position: unset;
+        background-color: unset;
+        padding: unset;
+        margin-inline: auto;
+        color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .item {
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 </style>
