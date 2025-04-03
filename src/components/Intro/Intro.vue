@@ -5,7 +5,9 @@
         <div class="headerContainer">
             <div class="intro">
                 <h1>The path to your perfect vacations</h1>
-                <p>Support sustainable tourism in Langhe and Roero</p>
+                <small
+                    >Support sustainable tourism in Langhe and Roero</small
+                >
                 <button>Book now</button>
             </div>
             <div class="isometric">
@@ -38,14 +40,12 @@
 
 h1 {
     font-size: var(--fs-xxl);
-    font-weight: 700;
     line-height: 120%;
     max-width: 525px;
 }
 
-p {
+small {
     font-size: var(--fs-md);
-    font-weight: 500;
     max-width: 500px;
 }
 
@@ -90,17 +90,8 @@ button {
         place-content: start;
     }
 
-    h1 {
-        font-weight: 700;
-    }
-
-    p {
-        font-weight: 500;
-    }
-
     button {
         padding-block: 0.5rem;
-        font-weight: 500;
     }
 
     .isometric {

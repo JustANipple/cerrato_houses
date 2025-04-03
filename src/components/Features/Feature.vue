@@ -26,7 +26,7 @@ const props = defineProps({
         </div>
         <div class="content">
             <h3 class="title">{{ props.title }}</h3>
-            <p class="description">{{ props.description }}</p>
+            <small class="description">{{ props.description }}</small>
         </div>
         <router-link :to="props.link" class="link">See more</router-link>
     </div>
@@ -61,12 +61,10 @@ const props = defineProps({
 
 .title {
     font-size: var(--fs-lg);
-    font-weight: 600;
 }
 
 .description {
     font-size: var(--fs-base);
-    font-weight: 400;
     max-width: 350px;
 }
 
@@ -77,7 +75,6 @@ const props = defineProps({
     color: var(--primary-color);
     text-decoration: none;
     font-size: var(--fs-base);
-    font-weight: 400;
     max-width: fit-content;
     border-radius: 5px;
     margin-top: auto;

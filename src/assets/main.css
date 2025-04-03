@@ -21,6 +21,38 @@
     --max-w: 1300px;
 }
 
+body {
+    font-family: var(--ff);
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+small {
+    font-size: var(--fs-sm);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: var(--fs-xxl);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--fs-xl);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--fs-lg);
+    font-weight: 500;
+}
+
+p {
+    font-size: var(--fs-base);
+    font-weight: 400;
+}
+
 @media screen and (min-width: 1024px) {
     :root {
         --fs-sm: 0.875rem; /* 14px */
@@ -30,16 +62,7 @@
         --fs-xl: 1.75rem; /* 28px */
         --fs-xxl: 2.25rem; /* 36px */
     }
-}
 
-body {
-    font-family: var(--ff);
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-}
-
-@media screen and (min-width: 1024px) {
     #app {
         overflow: hidden;
     }

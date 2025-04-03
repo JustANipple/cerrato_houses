@@ -52,7 +52,8 @@ import {
                 </div>
             </div>
             <p class="copyright">
-                &copy;2025 | All rights reserved | Site by
+                &copy;{{ new Date().getFullYear() }} | All rights reserved
+                | Site by
                 <a href="https://github.com/JustANipple"> Samuel Prandi</a>
             </p>
         </div>
@@ -90,7 +91,6 @@ import {
 
 .logo p {
     font-size: var(--fs-xl);
-    font-weight: 400;
 }
 
 .socials {
@@ -120,7 +120,6 @@ import {
 
 .title {
     font-size: var(--fs-lg);
-    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -133,13 +132,11 @@ import {
     text-decoration: none;
     color: inherit;
     font-size: var(--fs-base);
-    font-weight: 500;
 }
 
 .copyright {
     padding-top: 2rem;
     font-size: var(--fs-sm);
-    font-weight: 500;
     text-align: center;
 }
 

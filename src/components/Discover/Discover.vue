@@ -39,12 +39,11 @@ import House from './House.vue'
 
 .discoverContainer {
     display: grid;
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 h2 {
     font-size: var(--fs-xl);
-    font-weight: 600px;
     text-align: center;
     color: var(--secondary-color);
 }
@@ -70,7 +69,6 @@ h2 {
     }
 
     h2 {
-        font-weight: 600;
         text-align: left;
     }
 

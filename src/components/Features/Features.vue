@@ -45,7 +45,7 @@ import Feature from './Feature.vue'
 .featureSectionContainer {
     display: grid;
     place-content: center;
-    row-gap: 2rem;
+    row-gap: 3rem;
     width: 100%;
     max-width: var(--max-w);
 }
@@ -78,15 +78,15 @@ import Feature from './Feature.vue'
     }
 
     .title {
-        font-weight: 600;
         text-align: left;
     }
 
     .features {
         display: flex;
+        align-items: center;
         max-width: var(--max-w);
         width: 100%;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .divider {
@@ -94,6 +94,7 @@ import Feature from './Feature.vue'
         border-right: unset;
         border-top: unset;
         flex: 0.125;
+        height: 100%;
     }
 }
 </style>

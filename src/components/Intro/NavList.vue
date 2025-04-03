@@ -45,7 +45,6 @@
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 600;
 }
 
 .item li {
@@ -70,7 +69,6 @@
 
     .item {
         text-transform: capitalize;
-        font-weight: 500;
     }
 }
 </style>

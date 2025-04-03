@@ -39,9 +39,9 @@ const props = defineProps({
             <img :src="image" alt="house" />
         </div>
         <div class="content">
-            <p class="pricePar">
+            <small class="pricePar">
                 From <span class="price">{{ price }}€</span> night
-            </p>
+            </small>
             <div class="body">
                 <h3 class="title">{{ title }}</h3>
                 <p class="address">{{ address }}</p>
@@ -94,11 +94,6 @@ const props = defineProps({
 
 .pricePar {
     font-size: var(--fs-base);
-    font-weight: 400;
-}
-
-.price {
-    font-weight: 500;
 }
 
 .body {
@@ -108,12 +103,10 @@ const props = defineProps({
 
 .title {
     font-size: var(--fs-lg);
-    font-weight: 700px;
 }
 
 .address {
     font-size: var(--fs-base);
-    font-weight: 400;
 }
 
 .divider {
@@ -141,7 +134,6 @@ const props = defineProps({
 
 .info div p {
     font-size: var(--fs-sm);
-    font-weight: 400;
 }
 
 @media screen and (min-width: 1024px) {
@@ -151,22 +143,6 @@ const props = defineProps({
 
     .content {
         row-gap: 1rem;
-    }
-
-    .pricePar {
-        font-weight: 400;
-    }
-
-    .price {
-        font-weight: 500;
-    }
-
-    .title {
-        font-weight: 700px;
-    }
-
-    .address {
-        font-weight: 400;
     }
 }
 </style>
