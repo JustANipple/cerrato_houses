@@ -1,6 +1,6 @@
 <script setup>
-import Discover from '@/components/Discover/Discover.vue'
-import Features from '@/components/Features/Features.vue'
+import ContactUs from '@/components/Faqs/ContactUs.vue'
+import Faqs from '@/components/Faqs/Faqs.vue'
 import Intro from '@/components/Intro/AppIntro.vue'
 </script>
 
@@ -8,10 +8,10 @@ import Intro from '@/components/Intro/AppIntro.vue'
     <Intro
         :title="'The path to your perfect vacations'"
         :description="'Support sustainable tourism in Langhe and Roero'"
-        :imageUrl="'/isometric_room.png'"
+        :imageUrl="'/isometric_room_faq.png'"
     />
-    <Discover />
-    <Features />
+    <Faqs />
+    <ContactUs />
 </template>
 
 <style scoped></style>

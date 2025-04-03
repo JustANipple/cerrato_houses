@@ -1,17 +1,30 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+    title: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    imageUrl: {
+        type: String,
+        required: true,
+    },
+})
+</script>
 
 <template>
     <header class="header">
         <div class="headerContainer">
             <div class="intro">
-                <h1>The path to your perfect vacations</h1>
-                <small
-                    >Support sustainable tourism in Langhe and Roero</small
-                >
+                <h1>{{ props.title }}</h1>
+                <small>{{ props.description }}</small>
                 <button>Book now</button>
             </div>
             <div class="isometric">
-                <img src="/isometric_room.png" alt="isometric room" />
+                <img :src="props.imageUrl" alt="isometric room" />
             </div>
         </div>
     </header>
@@ -102,7 +115,7 @@ button {
         max-width: 550px;
         margin-top: -5.75rem;
         position: relative;
-        left: 10rem;
+        left: 7rem;
     }
 }
 

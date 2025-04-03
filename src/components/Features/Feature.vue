@@ -56,7 +56,7 @@ const props = defineProps({
 
 .content {
     display: grid;
-    row-gap: 0.25rem;
+    row-gap: 0.5rem;
 }
 
 .title {

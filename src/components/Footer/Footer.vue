@@ -62,7 +62,7 @@ import {
 
 <style scoped>
 .footer {
-    background-origin: var(--tertiary-color);
+    background-color: var(--tertiary-color);
     padding-block: 2rem;
     display: flex;
     justify-content: center;
