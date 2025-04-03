@@ -93,7 +93,7 @@ const props = defineProps({
 }
 
 .pricePar {
-    font-size: 12px;
+    font-size: var(--fs-base);
     font-weight: 400;
 }
 
@@ -107,24 +107,25 @@ const props = defineProps({
 }
 
 .title {
-    font-size: 18px;
+    font-size: var(--fs-lg);
     font-weight: 700px;
 }
 
 .address {
-    font-size: 14px;
+    font-size: var(--fs-base);
     font-weight: 400;
 }
 
 .divider {
     border-bottom: unset;
     border-color: rgba(0, 0, 0, 0.1);
+    margin-block: 0.5rem;
 }
 
 .info {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
 }
 
 .info div {
@@ -139,7 +140,7 @@ const props = defineProps({
 }
 
 .info div p {
-    font-size: 10px;
+    font-size: var(--fs-sm);
     font-weight: 400;
 }
 

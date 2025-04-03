@@ -43,7 +43,7 @@ import House from './House.vue'
 }
 
 h2 {
-    font-size: 24px;
+    font-size: var(--fs-xl);
     font-weight: 600px;
     text-align: center;
     color: var(--secondary-color);

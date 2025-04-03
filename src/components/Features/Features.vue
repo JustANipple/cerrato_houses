@@ -53,6 +53,7 @@ import Feature from './Feature.vue'
 .title {
     color: var(--tertiary-color);
     text-align: center;
+    font-size: var(--fs-xl);
 }
 
 .features {

@@ -31,20 +31,20 @@
 .intro {
     display: grid;
     place-content: center;
-    row-gap: 0.5rem;
+    row-gap: 1rem;
     color: var(--tertiary-color);
     width: 100%;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: var(--fs-xxl);
     font-weight: 700;
     line-height: 120%;
     max-width: 525px;
 }
 
 p {
-    font-size: 16px;
+    font-size: var(--fs-md);
     font-weight: 500;
     max-width: 500px;
 }
@@ -59,6 +59,7 @@ button {
     padding-inline: 1rem;
     margin-top: 1rem;
     margin-right: auto;
+    font-size: var(--fs-md);
 }
 
 .isometric {
@@ -90,7 +91,7 @@ button {
     }
 
     h1 {
-        font-size: 38px;
+        font-size: 36px;
         font-weight: 700;
     }
 

@@ -45,7 +45,7 @@
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 

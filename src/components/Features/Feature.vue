@@ -51,6 +51,7 @@ const props = defineProps({
 
 .icon {
     color: var(--primary-color);
+    padding: 0.125rem;
 }
 
 .content {
@@ -59,12 +60,12 @@ const props = defineProps({
 }
 
 .title {
-    font-size: 14px;
+    font-size: var(--fs-lg);
     font-weight: 600;
 }
 
 .description {
-    font-size: 11px;
+    font-size: var(--fs-base);
     font-weight: 400;
     max-width: 350px;
 }
@@ -75,7 +76,7 @@ const props = defineProps({
     background-color: transparent;
     color: var(--primary-color);
     text-decoration: none;
-    font-size: 11px;
+    font-size: var(--fs-base);
     font-weight: 400;
     max-width: fit-content;
     border-radius: 5px;

@@ -89,7 +89,7 @@ import {
 }
 
 .logo p {
-    font-size: 20px;
+    font-size: var(--fs-xl);
     font-weight: 400;
 }
 
@@ -97,14 +97,14 @@ import {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     padding-block: 2rem;
 }
 
 .social {
     border: 1px solid var(--secondary-color);
     border-radius: 50%;
-    padding: 0.25rem;
+    padding: 0.5rem;
 }
 
 .social a {
@@ -119,7 +119,7 @@ import {
 }
 
 .title {
-    font-size: 16px;
+    font-size: var(--fs-lg);
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -132,13 +132,13 @@ import {
 .links a {
     text-decoration: none;
     color: inherit;
-    font-size: 14px;
+    font-size: var(--fs-base);
     font-weight: 500;
 }
 
 .copyright {
     padding-top: 2rem;
-    font-size: 12px;
+    font-size: var(--fs-sm);
     font-weight: 500;
     text-align: center;
 }
