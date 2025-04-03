@@ -154,7 +154,6 @@ const props = defineProps({
     }
 
     .pricePar {
-        font-size: 16px;
         font-weight: 400;
     }
 
@@ -163,17 +162,11 @@ const props = defineProps({
     }
 
     .title {
-        font-size: 22px;
         font-weight: 700px;
     }
 
     .address {
-        font-size: 16px;
         font-weight: 400;
-    }
-
-    .info div p {
-        font-size: 12px;
     }
 }
 </style>

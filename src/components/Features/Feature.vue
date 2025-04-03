@@ -80,20 +80,13 @@ const props = defineProps({
     font-weight: 400;
     max-width: fit-content;
     border-radius: 5px;
+    margin-top: auto;
 }
 
 @media screen and (min-width: 1024px) {
     .feature {
         row-gap: 2rem;
         flex: 1;
-    }
-
-    .title {
-        font-size: 18px;
-    }
-
-    .description {
-        font-size: 14px;
     }
 }
 </style>

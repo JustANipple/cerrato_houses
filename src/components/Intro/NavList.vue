@@ -45,7 +45,6 @@
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 22px;
     font-weight: 600;
 }
 
@@ -71,7 +70,6 @@
 
     .item {
         text-transform: capitalize;
-        font-size: 16px;
         font-weight: 500;
     }
 }

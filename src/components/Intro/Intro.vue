@@ -91,18 +91,15 @@ button {
     }
 
     h1 {
-        font-size: 36px;
         font-weight: 700;
     }
 
     p {
-        font-size: 24px;
         font-weight: 500;
     }
 
     button {
         padding-block: 0.5rem;
-        font-size: 20px;
         font-weight: 500;
     }
 
@@ -112,7 +109,7 @@ button {
 
     .isometric img {
         max-width: 550px;
-        margin-top: -5.875rem;
+        margin-top: -5.75rem;
         position: relative;
         left: 10rem;
     }
@@ -125,7 +122,7 @@ button {
 
     .isometric {
         max-width: 600px;
-        margin-bottom: -2rem;
+        margin-bottom: -0.85rem;
     }
 
     .isometric img {

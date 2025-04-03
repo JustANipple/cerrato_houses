@@ -70,7 +70,6 @@ h2 {
     }
 
     h2 {
-        font-size: 30px;
         font-weight: 600;
         text-align: left;
     }

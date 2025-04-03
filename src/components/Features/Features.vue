@@ -78,7 +78,6 @@ import Feature from './Feature.vue'
     }
 
     .title {
-        font-size: 30px;
         font-weight: 600;
         text-align: left;
     }
