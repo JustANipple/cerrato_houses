@@ -10,6 +10,8 @@
     --desktop-padding-inline: 7.5rem;
 
     --ff: 'Montserrat', sans-serif;
+
+    --max-w: 1400px;
 }
 
 body {

@@ -1,32 +1,34 @@
 <script setup>
-import { FaBicycle } from 'vue-icons-plus/fa'
+import { FaBicycle, FaWineGlass, FaCarSide } from 'vue-icons-plus/fa'
 import Feature from './Feature.vue'
 </script>
 
 <template>
     <section class="featureSection">
-        <h2 class="title">How we can help you</h2>
-        <div class="features">
-            <Feature
-                :icon="FaBicycle"
-                :title="'Find out how much you can afford'"
-                :description="'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum'"
-                :link="'/placeholder'"
-            />
-            <hr class="divider" />
-            <Feature
-                :icon="FaBicycle"
-                :title="'Find out how much you can afford'"
-                :description="'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum'"
-                :link="'/placeholder'"
-            />
-            <hr class="divider" />
-            <Feature
-                :icon="FaBicycle"
-                :title="'Find out how much you can afford'"
-                :description="'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum'"
-                :link="'/placeholder'"
-            />
+        <div class="featureSectionContainer">
+            <h2 class="title">Your next adventure starts here</h2>
+            <div class="features">
+                <Feature
+                    :icon="FaBicycle"
+                    :title="'Get your bike now'"
+                    :description="'Explore winding country roads, charming villages, and panoramic views of Langhe and Roero'"
+                    :link="'/placeholder'"
+                />
+                <hr class="divider" />
+                <Feature
+                    :icon="FaWineGlass"
+                    :title="'Truffle Hunts & Fine Wines Await'"
+                    :description="'Uncover the secrets of truffle hunting, guided tours of historic cellars & wine tastings'"
+                    :link="'/placeholder'"
+                />
+                <hr class="divider" />
+                <Feature
+                    :icon="FaCarSide"
+                    :title="'Private Transfers on Demand'"
+                    :description="'Travel with our NCC service, available for private transfers, events and more'"
+                    :link="'/placeholder'"
+                />
+            </div>
         </div>
     </section>
 </template>
@@ -36,8 +38,16 @@ import Feature from './Feature.vue'
     background-color: var(--secondary-color);
     padding-block: 2rem;
     padding-inline: var(--mobile-padding-inline);
+    display: flex;
+    justify-content: center;
+}
+
+.featureSectionContainer {
     display: grid;
+    place-content: center;
     row-gap: 2rem;
+    width: 100%;
+    max-width: var(--max-w);
 }
 
 .title {
@@ -62,6 +72,10 @@ import Feature from './Feature.vue'
         place-content: center;
     }
 
+    .featureSectionContainer {
+        place-content: unset;
+    }
+
     .title {
         font-size: 30px;
         font-weight: 600;
@@ -70,12 +84,16 @@ import Feature from './Feature.vue'
 
     .features {
         display: flex;
+        max-width: var(--max-w);
+        width: 100%;
         gap: 2rem;
     }
 
     .divider {
         border-color: var(--primary-color);
         border-right: unset;
+        border-top: unset;
+        flex: 0.125;
     }
 }
 </style>

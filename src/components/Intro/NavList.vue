@@ -58,7 +58,6 @@
         position: unset;
         background-color: unset;
         padding: unset;
-        margin-inline: auto;
         color: var(--primary-color);
         display: flex;
         justify-content: center;

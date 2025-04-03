@@ -17,29 +17,37 @@ function handleOpen(value) {
 
 <template>
     <nav class="nav">
-        <img
-            src="/logo.svg"
-            alt="cerrato houses logo"
-            class="logo"
-            :class="{
-                open: isOpen,
-            }"
-        />
-        <NavList
-            :class="{ navEnterActive: isOpen, navLeaveActive: !isOpen }"
-        />
-        <Hamburger @open="handleOpen" />
+        <div class="navContainer">
+            <img
+                src="/logo.svg"
+                alt="cerrato houses logo"
+                class="logo"
+                :class="{
+                    open: isOpen,
+                }"
+            />
+            <NavList
+                :class="{
+                    navEnterActive: isOpen,
+                    navLeaveActive: !isOpen,
+                }"
+            />
+            <Hamburger @open="handleOpen" />
+        </div>
     </nav>
 </template>
 
 <style scoped>
 .nav {
+    background-color: var(--secondary-color);
     padding-block: 1rem;
+    padding-inline: var(--mobile-padding-inline);
+}
+
+.navContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary-color);
-    padding-inline: var(--mobile-padding-inline);
 }
 
 .logo {
@@ -80,6 +88,19 @@ function handleOpen(value) {
 }
 
 @media screen and (min-width: 1024px) {
+    .nav {
+        padding-inline: var(--desktop-padding-inline);
+        display: flex;
+        justify-content: center;
+    }
+
+    .navContainer {
+        display: flex;
+        justify-content: space-between;
+        max-width: var(--max-w);
+        width: 100%;
+    }
+
     .logo {
         height: 64px;
     }

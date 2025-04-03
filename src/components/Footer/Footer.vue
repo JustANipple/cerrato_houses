@@ -9,51 +9,53 @@ import {
 
 <template>
     <footer class="footer">
-        <div class="header">
-            <div class="logo">
-                <img
-                    src="/logo.svg"
-                    alt="cerrato houses logo"
-                    class="logoImg"
-                />
-                <p>Cerrato Houses</p>
+        <div class="footerContainer">
+            <div class="header">
+                <div class="logo">
+                    <img
+                        src="/logo.svg"
+                        alt="cerrato houses logo"
+                        class="logoImg"
+                    />
+                    <p>Cerrato Houses</p>
+                </div>
+                <div class="socials">
+                    <div class="social">
+                        <a href="https://www.google.com/">
+                            <FaInstagram size="18" />
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.google.com/">
+                            <FaFacebook size="18" />
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.google.com/">
+                            <FaAirbnb size="18" />
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.google.com/"
+                            ><FaTwitter size="18"
+                        /></a>
+                    </div>
+                </div>
             </div>
-            <div class="socials">
-                <div class="social">
-                    <a href="https://www.google.com/">
-                        <FaInstagram size="18" />
-                    </a>
-                </div>
-                <div class="social">
-                    <a href="https://www.google.com/">
-                        <FaFacebook size="18" />
-                    </a>
-                </div>
-                <div class="social">
-                    <a href="https://www.google.com/">
-                        <FaAirbnb size="18" />
-                    </a>
-                </div>
-                <div class="social">
-                    <a href="https://www.google.com/"
-                        ><FaTwitter size="18"
-                    /></a>
+            <div class="linksContainer">
+                <h3 class="title">Useful Links</h3>
+                <div class="links">
+                    <router-link to="/bikes">Bikes</router-link>
+                    <router-link to="/Faqs">Faqs</router-link>
+                    <router-link to="/contacts">Contacts</router-link>
+                    <router-link to="/privacy">Privacy</router-link>
                 </div>
             </div>
+            <p class="copyright">
+                &copy;2025 | All rights reserved | Site by
+                <a href="https://github.com/JustANipple"> Samuel Prandi</a>
+            </p>
         </div>
-        <div class="linksContainer">
-            <h3 class="title">Useful Links</h3>
-            <div class="links">
-                <router-link to="/bikes">Bikes</router-link>
-                <router-link to="/Faqs">Faqs</router-link>
-                <router-link to="/contacts">Contacts</router-link>
-                <router-link to="/privacy">Privacy</router-link>
-            </div>
-        </div>
-        <p class="copyright">
-            &copy;2025 | All rights reserved | Site by
-            <a href="https://github.com/JustANipple"> Samuel Prandi</a>
-        </p>
     </footer>
 </template>
 
@@ -61,8 +63,15 @@ import {
 .footer {
     background-origin: var(--tertiary-color);
     padding-block: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.footerContainer {
     display: grid;
     row-gap: 1rem;
+    width: 100%;
+    max-width: var(--max-w);
 }
 
 .logo {

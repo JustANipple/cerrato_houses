@@ -66,6 +66,7 @@ const props = defineProps({
 .description {
     font-size: 11px;
     font-weight: 400;
+    max-width: 350px;
 }
 
 .link {
@@ -83,6 +84,7 @@ const props = defineProps({
 @media screen and (min-width: 1024px) {
     .feature {
         row-gap: 2rem;
+        flex: 1;
     }
 
     .title {

@@ -2,13 +2,15 @@
 
 <template>
     <header class="header">
-        <div class="intro">
-            <h1>Homes That Match.</h1>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-            <button>Book now</button>
-        </div>
-        <div class="isometric">
-            <img src="/isometric_room.png" alt="isometric room" />
+        <div class="headerContainer">
+            <div class="intro">
+                <h1>The path to your perfect vacations</h1>
+                <p>Support sustainable tourism in Langhe and Roero</p>
+                <button>Book now</button>
+            </div>
+            <div class="isometric">
+                <img src="/isometric_room.png" alt="isometric room" />
+            </div>
         </div>
     </header>
 </template>
@@ -18,6 +20,9 @@
     padding-top: 0.5rem;
     padding-inline: var(--mobile-padding-inline);
     background-color: var(--secondary-color);
+}
+
+.headerContainer {
     display: grid;
     justify-items: center;
     row-gap: 1rem;
@@ -25,20 +30,23 @@
 
 .intro {
     display: grid;
+    place-content: center;
     row-gap: 0.5rem;
     color: var(--tertiary-color);
     width: 100%;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 120%;
+    max-width: 525px;
 }
 
 p {
     font-size: 16px;
     font-weight: 500;
+    max-width: 500px;
 }
 
 button {
@@ -61,26 +69,34 @@ button {
 
 @media screen and (min-width: 1024px) {
     .header {
+        padding-block: 5rem;
+        padding-inline: var(--desktop-padding-inline);
         display: flex;
         justify-content: center;
+    }
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        padding-block: 6rem;
-        padding-inline: var(--desktop-padding-inline);
+        gap: 1rem;
+        width: 100%;
+        max-width: var(--max-w);
     }
 
     .intro {
-        max-width: 520px;
+        flex: 1;
+        place-content: start;
     }
 
     h1 {
-        font-size: 52px;
+        font-size: 38px;
         font-weight: 700;
     }
 
     p {
         font-size: 24px;
         font-weight: 500;
-        max-width: 500px;
     }
 
     button {
@@ -90,15 +106,30 @@ button {
     }
 
     .isometric {
-        width: 290px;
+        flex: 1;
     }
 
     .isometric img {
-        width: 600px;
-        height: auto;
-        max-width: unset;
-        object-fit: cover;
-        margin-top: -6.75rem;
+        max-width: 550px;
+        margin-top: -5.875rem;
+        position: relative;
+        left: 10rem;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .header {
+        padding-block: 6rem;
+    }
+
+    .isometric {
+        max-width: 600px;
+        margin-bottom: -2rem;
+    }
+
+    .isometric img {
+        left: unset;
+        margin-left: auto;
     }
 }
 </style>

@@ -68,6 +68,7 @@ const props = defineProps({
 <style scoped>
 .house {
     display: grid;
+    max-width: 450px;
 }
 
 .imageContainer {
@@ -143,10 +144,6 @@ const props = defineProps({
 }
 
 @media screen and (min-width: 1024px) {
-    .house {
-        max-width: 450px;
-    }
-
     .imageContainer {
         height: 250px;
     }
