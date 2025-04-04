@@ -70,4 +70,18 @@ import Faq from './Faq.vue'
     border-top: unset;
     border-bottom: 1px solid var(--primary-color);
 }
+
+@media screen and (min-width: 1024px) {
+    .faqs {
+        padding-block: 5rem;
+        padding-inline: var(--desktop-padding-inline);
+        display: flex;
+        justify-content: center;
+    }
+
+    .faqsContainer {
+        width: 100%;
+        max-width: var(--max-w);
+    }
+}
 </style>

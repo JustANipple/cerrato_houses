@@ -1,4 +1,54 @@
-<script setup></script>
+<script setup>
+import { reactive, ref } from 'vue'
+
+const RECIPIENT_EMAIL = 'cerratohouses@gmail.com'
+
+const formData = reactive({
+    name: '',
+    email: '',
+    message: '',
+})
+
+const statusMessage = ref('')
+
+function handleFormSubmit() {
+    statusMessage.value = 'Preparing email...'
+
+    const subject = `Contact Form Submission from ${formData.name}`
+
+    const body = `
+      You received a message via the Cerrato Houses website contact form:
+
+      ------------------------------------
+
+      Sender Name: ${formData.name}
+      Sender Email: ${formData.email}
+
+      ------------------------------------
+
+      Message:
+      ${formData.message}
+    `
+
+    const encodedSubject = encodeURIComponent(subject)
+    const encodedBody = encodeURIComponent(body.trim()).replace(
+        /%0A/g,
+        '%0D%0A',
+    )
+
+    const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodedSubject}&body=${encodedBody}`
+
+    try {
+        statusMessage.value =
+            "Opening your email client. Please click 'Send' there to complete."
+        window.location.href = mailtoLink
+    } catch (error) {
+        console.error('Failed to trigger mailto link:', error)
+        statusMessage.value =
+            'Could not open email client. Please copy the details manually.'
+    }
+}
+</script>
 
 <template>
     <section class="contactUs">
@@ -6,15 +56,33 @@
             <div class="header">
                 <h2 class="title">Contact us</h2>
                 <p class="description">
-                    lt is very important for us to keep touch with, so we
-                    are always ready to answer any that interests you
+                    It is very important for us to keep touch with you, so
+                    we are always ready to answer any question that
+                    interests you.
                 </p>
             </div>
-            <form class="form">
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <textarea placeholder="Message"></textarea>
+            <form class="form" @submit.prevent="handleFormSubmit">
+                <input
+                    type="text"
+                    placeholder="Name"
+                    v-model="formData.name"
+                    required
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    v-model="formData.email"
+                    required
+                />
+                <textarea
+                    placeholder="Message"
+                    v-model="formData.message"
+                    required
+                ></textarea>
                 <button type="submit">Submit</button>
+                <p v-if="statusMessage" class="status-message">
+                    {{ statusMessage }}
+                </p>
             </form>
         </div>
     </section>
@@ -54,6 +122,8 @@
     border-bottom: 1px solid var(--primary-color);
     padding-bottom: 1rem;
     color: var(--tertiary-color);
+    outline: unset;
+    caret-color: var(--tertiary-color);
 }
 
 .form input::placeholder,
@@ -61,11 +131,11 @@
     color: var(--tertiary-color);
     font-size: var(--fs-md);
     opacity: 70%;
-    font-weight: medium;
 }
 
 .form textarea {
     resize: none;
+    min-height: 80px;
 }
 
 button {
@@ -79,5 +149,50 @@ button {
     font-size: var(--fs-md);
     font-weight: bold;
     margin-top: 1rem;
+}
+
+.status-message {
+    margin-top: 1rem;
+    color: var(--tertiary-color);
+    font-size: var(--fs-sm);
+    opacity: 0.9;
+}
+
+@media screen and (min-width: 1024px) {
+    .contactUs {
+        padding-block: 5rem;
+        padding-inline: var(--desktop-padding-inline);
+        display: flex;
+        justify-content: center;
+    }
+
+    .contactUsContainer {
+        width: 100%;
+        max-width: var(--max-w);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        column-gap: 4rem;
+    }
+
+    .header {
+        place-content: start;
+        flex: 1;
+    }
+
+    .title {
+        font-size: var(--fs-xxl);
+    }
+
+    .description {
+        max-width: 30rem;
+        font-size: var(--fs-lg);
+    }
+
+    .form {
+        flex: 0.75;
+        width: 100%;
+        max-width: 450px;
+    }
 }
 </style>

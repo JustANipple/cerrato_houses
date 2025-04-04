@@ -25,7 +25,11 @@ const isOpen = ref(false)
                 <FaMinus size="32" class="icon" v-else />
             </button>
         </div>
-        <p class="description" v-if="isOpen">{{ props.description }}</p>
+        <Transition>
+            <p class="description" v-if="isOpen">
+                {{ props.description }}
+            </p>
+        </Transition>
     </div>
 </template>
 
@@ -44,6 +48,8 @@ const isOpen = ref(false)
 
 .description {
     opacity: 60%;
+    max-height: 10rem;
+    overflow: hidden;
 }
 
 .button {
@@ -57,5 +63,22 @@ const isOpen = ref(false)
 .icon {
     aspect-ratio: 1/1;
     color: var(--primary-color);
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: all 0.25s ease-in-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+    max-height: 0;
+    opacity: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .description {
+        padding-right: 4rem;
+    }
 }
 </style>
