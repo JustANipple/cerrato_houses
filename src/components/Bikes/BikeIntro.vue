@@ -17,7 +17,7 @@
 .header {
     background:
         linear-gradient(to bottom, transparent, rgba(49, 45, 46, 1) 350px),
-        var(--secondary-color) url('bike_diagonal.png') center/320px
+        var(--secondary-color) url('/bike_diagonal.png') center/320px
             no-repeat;
     height: 400px;
     place-content: end center;
