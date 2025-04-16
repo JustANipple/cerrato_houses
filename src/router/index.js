@@ -1,4 +1,4 @@
-// import Home from '@/views/Home.vue'
+import Home from '@/views/Home.vue'
 import Layout from '@/views/AppLayout.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import FaqsView from '@/views/FaqsView.vue'
@@ -14,8 +14,7 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Home',
-                    // component: Home,
-                    component: BikesView,
+                    component: Home,
                 },
             ],
         },

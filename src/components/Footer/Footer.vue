@@ -45,7 +45,7 @@ import {
             <div class="linksContainer">
                 <h3 class="title">Useful Links</h3>
                 <div class="links">
-                    <router-link to="/bikes">Bikes</router-link>
+                    <router-link to="/Bikes">Bikes</router-link>
                     <router-link to="/Faqs">Faqs</router-link>
                     <router-link to="/contacts">Contacts</router-link>
                     <router-link to="/privacy">Privacy</router-link>

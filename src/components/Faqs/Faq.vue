@@ -23,7 +23,7 @@ const isOpen = ref(false)
     <div class="faq">
         <div class="header">
             <h3 class="title">
-                {{ props.number ? props.number + '&nbsp;' : ''
+                {{ props.number ? props.number + '&nbsp;&nbsp;' : ''
                 }}{{ props.title }}
             </h3>
             <button class="button" @click="isOpen = !isOpen">
