@@ -67,7 +67,7 @@
                 transparent,
                 rgba(49, 45, 46, 1) 450px
             ),
-            var(--secondary-color) url('bike_diagonal.png') center/450px
+            var(--secondary-color) url('/bike_diagonal.png') center/450px
                 no-repeat;
         height: 550px;
         padding-block: 3rem;
