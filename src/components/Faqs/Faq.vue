@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import { FaPlus, FaMinus } from 'vue-icons-plus/fa'
 
 const props = defineProps({
+    number: {
+        type: String,
+    },
     title: {
         type: String,
         required: true,
@@ -19,10 +22,13 @@ const isOpen = ref(false)
 <template>
     <div class="faq">
         <div class="header">
-            <h3 class="title">{{ props.title }}</h3>
+            <h3 class="title">
+                {{ props.number ? props.number + '&nbsp;' : ''
+                }}{{ props.title }}
+            </h3>
             <button class="button" @click="isOpen = !isOpen">
-                <FaPlus size="32" class="icon" v-if="!isOpen" />
-                <FaMinus size="32" class="icon" v-else />
+                <FaPlus class="icon" v-if="!isOpen" />
+                <FaMinus class="icon" v-else />
             </button>
         </div>
         <Transition>
@@ -58,6 +64,10 @@ const isOpen = ref(false)
     align-items: center;
     background-color: unset;
     border: unset;
+}
+
+.button svg {
+    max-width: 20px;
 }
 
 .icon {
