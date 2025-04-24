@@ -40,36 +40,38 @@ function showPreview(value) {
 
 <template>
     <div class="carousel">
-        <ul class="images">
-            <li
-                class="image"
-                v-for="(image, index) in props.images"
-                :key="image"
-                :style="{
-                    transform: currentPosition,
-                }"
-                @click="showPreview(index)"
-            >
-                <img :src="image" />
-            </li>
-        </ul>
-        <button class="left" @click="changeImage(-1)">
-            <FaAngleLeft />
-        </button>
-        <button class="right" @click="changeImage(1)">
-            <FaAngleRight />
-        </button>
-        <ul class="dots">
-            <li
-                v-for="(_, index) in props.images"
-                :key="index"
-                class="dot"
-                :class="{ active: currentImage === index }"
-                @click="currentImage = index"
-            >
-                <FaCircle />
-            </li>
-        </ul>
+        <div class="carouselContainer">
+            <ul class="images">
+                <li
+                    class="image"
+                    v-for="(image, index) in props.images"
+                    :key="image"
+                    :style="{
+                        transform: currentPosition,
+                    }"
+                    @click="showPreview(index)"
+                >
+                    <img :src="image" />
+                </li>
+            </ul>
+            <button class="left" @click="changeImage(-1)">
+                <FaAngleLeft />
+            </button>
+            <button class="right" @click="changeImage(1)">
+                <FaAngleRight />
+            </button>
+            <ul class="dots">
+                <li
+                    v-for="(_, index) in props.images"
+                    :key="index"
+                    class="dot"
+                    :class="{ active: currentImage === index }"
+                    @click="currentImage = index"
+                >
+                    <FaCircle />
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="preview" v-show="previewShown">
         <button class="previewLeft" @click="showPreview">
@@ -168,7 +170,7 @@ img {
 }
 
 .preview {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -198,6 +200,20 @@ img {
 }
 
 @media screen and (min-width: 744px) {
+    .carousel {
+        padding-block: 3rem;
+        padding-inline: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .carouselContainer {
+        width: 100%;
+        max-width: var(--max-w);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
     .images {
         height: unset;
         display: grid;

@@ -28,6 +28,14 @@ const zoom = ref(15)
 <style scoped>
 .map {
     height: 400px;
-    padding-inline: var(--mobile-padding-inline);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-inline: var(--mobile-padding-inline);
+}
+
+@media screen and (min-width: 1024px) {
+    .map {
+        margin-inline: unset;
+    }
 }
 </style>
