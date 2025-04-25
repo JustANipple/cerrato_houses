@@ -1,9 +1,9 @@
 <script setup>
 import {
     FaInstagram,
-    FaFacebook,
     FaAirbnb,
-    FaTwitter,
+    FaWhatsapp,
+    FaBook,
 } from 'vue-icons-plus/fa'
 </script>
 
@@ -21,34 +21,45 @@ import {
                 </div>
                 <div class="socials">
                     <div class="social">
-                        <a href="https://www.google.com/">
+                        <a
+                            href="https://www.instagram.com/cerratohouses/"
+                            target="_blank"
+                        >
                             <FaInstagram size="18" />
                         </a>
                     </div>
                     <div class="social">
-                        <a href="https://www.google.com/">
-                            <FaFacebook size="18" />
+                        <a
+                            href="https://www.booking.com/hotel/it/vista-langhe-cerratohouses.it.html"
+                            target="_blank"
+                        >
+                            <img
+                                src="/booking_icon_black.svg"
+                                alt=""
+                                class="bookingIcon"
+                            />
                         </a>
                     </div>
                     <div class="social">
-                        <a href="https://www.google.com/">
+                        <a
+                            href="https://www.airbnb.com/rooms/988230275664339719"
+                            target="_blank"
+                        >
                             <FaAirbnb size="18" />
                         </a>
-                    </div>
-                    <div class="social">
-                        <a href="https://www.google.com/"
-                            ><FaTwitter size="18"
-                        /></a>
                     </div>
                 </div>
             </div>
             <div class="linksContainer">
                 <h3 class="title">Useful Links</h3>
                 <div class="links">
-                    <router-link to="/Bikes">Bikes</router-link>
-                    <router-link to="/Faqs">Faqs</router-link>
-                    <router-link to="/contacts">Contacts</router-link>
-                    <router-link to="/privacy">Privacy</router-link>
+                    <router-link to="/">Home</router-link>
+                    <router-link to="/house"
+                        >Vista Langhe Home</router-link
+                    >
+                    <router-link to="/bikes">Bikes</router-link>
+                    <router-link to="/faqs">Faqs</router-link>
+                    <router-link to="#">Privacy Policy</router-link>
                 </div>
             </div>
             <p class="copyright">
@@ -109,6 +120,11 @@ import {
 
 .social a {
     color: inherit;
+}
+
+.bookingIcon {
+    width: 20px;
+    height: 20px;
 }
 
 .linksContainer {

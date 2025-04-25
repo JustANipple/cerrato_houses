@@ -6,7 +6,7 @@ import Intro from '@/components/Intro/AppIntro.vue'
 
 <template>
     <Intro
-        :title="'The path to your perfect vacations'"
+        :title="'Stay at Home in a Dreamy Place'"
         :description="'Support sustainable tourism in Langhe and Roero'"
         :imageUrl="'/isometric_room.png'"
     />

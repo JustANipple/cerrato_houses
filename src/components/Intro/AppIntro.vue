@@ -1,4 +1,6 @@
 <script setup>
+import { FaAirbnb } from 'vue-icons-plus/fa'
+
 const props = defineProps({
     title: {
         type: String,
@@ -21,7 +23,26 @@ const props = defineProps({
             <div class="intro">
                 <h1>{{ props.title }}</h1>
                 <small>{{ props.description }}</small>
-                <button>Book now</button>
+                <div class="externalLinks">
+                    <a
+                        href="https://www.airbnb.com/rooms/988230275664339719"
+                        target="_blank"
+                        class="externalLinkOne"
+                        ><FaAirbnb /> Book</a
+                    >
+                    <a
+                        href="https://www.booking.com/hotel/it/vista-langhe-cerratohouses.it.html"
+                        target="_blank"
+                        class="externalLinkTwo"
+                    >
+                        <img
+                            src="/booking_icon.svg"
+                            alt="booking icon"
+                            class="bookingIcon"
+                        />
+                        Book</a
+                    >
+                </div>
             </div>
             <div class="isometric">
                 <img :src="props.imageUrl" alt="isometric room" />
@@ -51,6 +72,35 @@ const props = defineProps({
     width: 100%;
 }
 
+.externalLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.externalLinkOne,
+.externalLinkTwo {
+    padding: 0.5rem 1.5rem;
+    background-color: #ee2755;
+    color: var(--tertiary-color);
+    max-width: fit-content;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.externalLinkTwo {
+    background-color: #003b95;
+}
+
+.bookingIcon {
+    width: 20px;
+    height: 20px;
+}
+
 h1 {
     font-size: var(--fs-xxl);
     line-height: 120%;
@@ -62,7 +112,7 @@ small {
     max-width: 500px;
 }
 
-button {
+.button {
     background-color: transparent;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
@@ -73,6 +123,7 @@ button {
     margin-top: 1rem;
     margin-right: auto;
     font-size: var(--fs-md);
+    text-decoration: none;
 }
 
 .isometric {

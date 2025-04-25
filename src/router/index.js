@@ -15,8 +15,7 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Home',
-                    component: HouseView,
-                    // component: Home,
+                    component: Home,
                 },
             ],
         },
@@ -42,7 +41,21 @@ const router = createRouter({
                 },
             ],
         },
+        {
+            path: '/house',
+            component: Layout,
+            children: [
+                {
+                    path: '',
+                    name: 'House',
+                    component: HouseView,
+                },
+            ],
+        },
     ],
+    scrollBehavior(savedPosition) {
+        return savedPosition || { top: 0, behavior: 'smooth' }
+    },
 })
 
 export default router

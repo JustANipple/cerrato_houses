@@ -3,17 +3,17 @@
 <template>
     <ul class="navList">
         <hr class="divider" />
-        <RouterLink to="/bikes" class="item">
+        <RouterLink to="/" class="item" @click="$emit('close')">
+            <li>Home</li>
+        </RouterLink>
+        <RouterLink to="/house" class="item" @click="$emit('close')">
+            <li>Vista Langhe Home</li>
+        </RouterLink>
+        <RouterLink to="/bikes" class="item" @click="$emit('close')">
             <li>Bikes</li>
         </RouterLink>
-        <RouterLink to="/houseOne" class="item">
-            <li>Casa di guarene 1</li>
-        </RouterLink>
-        <RouterLink to="/houseTwo" class="item">
-            <li>Casa di guarene 2</li>
-        </RouterLink>
-        <RouterLink to="/contacts" class="item">
-            <li>Contacts</li>
+        <RouterLink to="/faqs" class="item" @click="$emit('close')">
+            <li>Faqs</li>
         </RouterLink>
     </ul>
 </template>

@@ -34,7 +34,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="house">
+    <router-link to="/house" class="house">
         <div class="imageContainer">
             <img :src="image" alt="house" />
         </div>
@@ -62,13 +62,14 @@ const props = defineProps({
                 </div>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <style scoped>
 .house {
     display: grid;
     max-width: 450px;
+    text-decoration: none;
 }
 
 .imageContainer {
@@ -137,12 +138,20 @@ const props = defineProps({
 }
 
 @media screen and (min-width: 1024px) {
+    .house {
+        text-decoration: none;
+    }
     .imageContainer {
         height: 250px;
     }
 
     .content {
         row-gap: 1rem;
+    }
+
+    .info {
+        justify-content: unset;
+        gap: 1rem;
     }
 }
 </style>

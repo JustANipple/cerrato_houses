@@ -1,6 +1,18 @@
 <script setup>
 import ImageCarousel from '@/components/House/ImageCarousel.vue'
-import { FaSwimmer, FaWifi } from 'vue-icons-plus/fa'
+import {
+    FaWifi,
+    FaAirbnb,
+    FaSwimmingPool,
+    FaKey,
+    FaHotTub,
+} from 'vue-icons-plus/fa'
+import { Fa6MountainSun } from 'vue-icons-plus/fa6'
+import { BiSolidWine } from 'vue-icons-plus/bi'
+import { TbToolsKitchen2 } from 'vue-icons-plus/tb'
+import { AiFillCar } from 'vue-icons-plus/ai'
+import { RiChargingPileFill } from 'vue-icons-plus/ri'
+
 import HouseMap from '@/components/House/HouseMap.vue'
 
 const imgs = [
@@ -11,58 +23,75 @@ const imgs = [
     '/bathroom.jpg',
 ]
 </script>
-
 <template>
     <main class="main">
         <ImageCarousel :images="imgs" />
         <div class="header">
             <div class="headerContainer">
-                <h2 class="title">
-                    Aroma(s)tica Treehouse Monferrato 006154-BEB-00003
-                </h2>
+                <h2 class="title">Vista Langhe CerratoHouses</h2>
                 <div class="subtitleContainer">
                     <h3 class="subtitle">
-                        San Salvatore Monferrato, Italia. Stanza privata in
-                        chalet
+                        Via San Sebastiano, 10/A, 12050 Guarene, Italy.
+                        Private home with Jacuzzi
                     </h3>
                     <small
-                        >2 ospiti - 1 camera da letto - 1 letto - 1 bagno
-                        privato</small
+                        >2 guests - 1 bedroom - 1 bed - 1 private
+                        bathroom</small
                     >
                 </div>
-                <a href="www.google.com" class="externalLink">Prenota</a>
+                <div class="externalLinks">
+                    <a
+                        href="https://www.airbnb.com/rooms/988230275664339719"
+                        target="_blank"
+                        class="externalLinkOne"
+                        ><FaAirbnb /> Book</a
+                    >
+                    <a
+                        href="https://www.booking.com/hotel/it/vista-langhe-cerratohouses.it.html"
+                        target="_blank"
+                        class="externalLinkTwo"
+                    >
+                        <img
+                            src="/booking_icon.svg"
+                            alt="booking icon"
+                            class="bookingIcon"
+                        />
+                        Book</a
+                    >
+                </div>
             </div>
         </div>
         <hr class="divider" />
         <div class="features">
             <div class="featuresContainer">
                 <div class="feature">
-                    <FaSwimmer />
+                    <FaSwimmingPool size="24" />
                     <div class="content">
-                        <p class="title">Tuffati</p>
+                        <p class="title">Dive right in</p>
                         <p class="subtitle">
-                            Questo è uno dei pochi alloggi in zona dotati
-                            di piscina
+                            This is one of the few places in the area with
+                            a pool.
                         </p>
                     </div>
                 </div>
                 <div class="feature">
-                    <FaSwimmer />
+                    <FaKey size="24" />
                     <div class="content">
-                        <p class="title">Tuffati</p>
+                        <p class="title">
+                            Exceptional check-in experience
+                        </p>
                         <p class="subtitle">
-                            Questo è uno dei pochi alloggi in zona dotati
-                            di piscina
+                            Recent guests gave the check-in process a
+                            5-star rating.
                         </p>
                     </div>
                 </div>
                 <div class="feature">
-                    <FaSwimmer />
+                    <Fa6MountainSun size="24" />
                     <div class="content">
-                        <p class="title">Tuffati</p>
+                        <p class="title">Mountain and vineyard views</p>
                         <p class="subtitle">
-                            Questo è uno dei pochi alloggi in zona dotati
-                            di piscina
+                            Soak up the views during your stay.
                         </p>
                     </div>
                 </div>
@@ -71,7 +100,7 @@ const imgs = [
         <hr class="divider" />
         <div class="houseDescription">
             <div class="descriptionContainer">
-                <h2 class="title">Troverai</h2>
+                <h2 class="title">About this space</h2>
                 <p class="description">
                     Un incantevole nido sospeso, un punto di vista
                     privilegiato sulle colline, tra i profumi dei tigli e
@@ -88,23 +117,39 @@ const imgs = [
         <hr class="divider" />
         <div class="houseServices">
             <div class="servicesContainer">
-                <h2>Cosa troverai</h2>
+                <h2>What this place offers</h2>
                 <div class="services">
                     <div class="service">
-                        <FaWifi />
-                        <p>Wifi gratuito</p>
+                        <Fa6MountainSun />
+                        <p>Valley view</p>
+                    </div>
+                    <div class="service">
+                        <BiSolidWine />
+                        <p>Vineyard view</p>
+                    </div>
+                    <div class="service">
+                        <TbToolsKitchen2 />
+                        <p>Kitchen</p>
                     </div>
                     <div class="service">
                         <FaWifi />
-                        <p>Wifi gratuito</p>
+                        <p>Wifi</p>
                     </div>
                     <div class="service">
-                        <FaWifi />
-                        <p>Wifi gratuito</p>
+                        <AiFillCar />
+                        <p>Free parking on premises</p>
                     </div>
                     <div class="service">
-                        <FaWifi />
-                        <p>Wifi gratuito</p>
+                        <FaSwimmingPool />
+                        <p>Pool</p>
+                    </div>
+                    <div class="service">
+                        <FaHotTub />
+                        <p>Hot tub</p>
+                    </div>
+                    <div class="service">
+                        <RiChargingPileFill />
+                        <p>EV charger</p>
                     </div>
                 </div>
             </div>
@@ -149,15 +194,33 @@ const imgs = [
     line-height: 120%;
 }
 
-.externalLink {
-    padding: 0.5rem 2rem;
-    background-color: var(--primary-color);
+.externalLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.externalLinkOne,
+.externalLinkTwo {
+    padding: 0.5rem 1.5rem;
+    background-color: #ee2755;
     color: var(--tertiary-color);
     max-width: fit-content;
     text-decoration: none;
     border-radius: 0.5rem;
     margin-top: 1rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.externalLinkTwo {
+    background-color: #003b95;
+}
+
+.bookingIcon {
+    width: 20px;
+    height: 20px;
 }
 
 .divider {
@@ -181,9 +244,8 @@ const imgs = [
 }
 
 .feature svg {
-    width: 40px;
-    height: 40px;
     color: var(--primary-color);
+    min-width: 2rem;
 }
 
 .content {
@@ -230,6 +292,7 @@ const imgs = [
 
 .service svg {
     color: var(--primary-color);
+    min-width: 1.5rem;
 }
 
 @media screen and (min-width: 744px) {
@@ -266,11 +329,9 @@ const imgs = [
     }
 
     .services {
-        gap: 2rem;
-    }
-
-    .service {
-        flex-basis: unset;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: start;
     }
 
     .divider {

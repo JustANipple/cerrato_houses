@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import NavList from './NavList.vue'
-import Hamburger from './Hamburger.vue'
+import router from '@/router'
 
 const isOpen = ref(false)
 
@@ -18,21 +18,50 @@ function handleOpen(value) {
 <template>
     <nav class="nav">
         <div class="navContainer">
-            <img
-                src="/logo.svg"
-                alt="cerrato houses logo"
-                class="logo"
-                :class="{
-                    open: isOpen,
-                }"
-            />
+            <router-link to="/" class="logoContainer">
+                <img
+                    src="/logo.svg"
+                    alt="cerrato houses logo"
+                    class="logo"
+                    :class="{
+                        open: isOpen,
+                    }"
+                />
+            </router-link>
             <NavList
                 :class="{
                     navEnterActive: isOpen,
                     navLeaveActive: !isOpen,
                 }"
+                @close="handleOpen"
             />
-            <Hamburger @open="handleOpen" />
+            <button class="button" @click="handleOpen(!isOpen)">
+                <svg
+                    v-if="!isOpen"
+                    class="icon"
+                    :class="{ open: isOpen }"
+                    aria-hidden="true"
+                    viewBox="-51.2 -51.2 614.4 614.4"
+                >
+                    <path
+                        d="M80 96h352v32H80zM80 240h352v32H80zM80 384h352v32H80z"
+                    ></path>
+                </svg>
+                <svg
+                    v-else
+                    class="icon"
+                    :class="{ open: isOpen }"
+                    aria-hidden="true"
+                    viewBox="0 0 512 512"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="32"
+                        d="M368 368L144 144M368 144L144 368"
+                    ></path>
+                </svg>
+            </button>
         </div>
     </nav>
 </template>
@@ -50,10 +79,13 @@ function handleOpen(value) {
     align-items: center;
 }
 
+.logoContainer {
+    z-index: 2;
+}
+
 .logo {
     aspect-ratio: 9/10;
     width: 56px;
-    z-index: 2;
 }
 
 .open {
@@ -87,6 +119,30 @@ function handleOpen(value) {
     }
 }
 
+.button {
+    background-color: unset;
+    border: none;
+    padding: unset;
+    z-index: 1;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--primary-color);
+    font-size: 2.88em;
+}
+
+.icon path {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.open {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(1%)
+        saturate(2660%) hue-rotate(295deg) brightness(99%) contrast(86%);
+}
+
 @media screen and (min-width: 1024px) {
     .nav {
         padding-inline: var(--desktop-padding-inline);
@@ -111,6 +167,10 @@ function handleOpen(value) {
 
     .navLeaveActive {
         animation: unset;
+    }
+
+    .button {
+        display: none;
     }
 }
 </style>

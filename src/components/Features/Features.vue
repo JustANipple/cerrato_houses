@@ -6,27 +6,27 @@ import Feature from './Feature.vue'
 <template>
     <section class="featureSection">
         <div class="featureSectionContainer">
-            <h2 class="title">Your next adventure starts here</h2>
+            <h2 class="title">Your next adventure starts</h2>
             <div class="features">
                 <Feature
                     :icon="FaBicycle"
                     :title="'Get your bike now'"
                     :description="'Explore winding country roads, charming villages, and panoramic views of Langhe and Roero'"
-                    :link="'/placeholder'"
+                    :link="'/bikes'"
                 />
                 <hr class="divider" />
                 <Feature
                     :icon="FaWineGlass"
                     :title="'Truffle Hunts & Fine Wines Await'"
                     :description="'Uncover the secrets of truffle hunting, guided tours of historic cellars & wine tastings'"
-                    :link="'/placeholder'"
+                    :link="'/faqs'"
                 />
                 <hr class="divider" />
                 <Feature
                     :icon="FaCarSide"
                     :title="'Private Transfers on Demand'"
                     :description="'Travel with our NCC service, available for private transfers, events and more'"
-                    :link="'/placeholder'"
+                    :link="'/faqs'"
                 />
             </div>
         </div>

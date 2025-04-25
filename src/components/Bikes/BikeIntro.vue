@@ -2,14 +2,9 @@
 
 <template>
     <header class="header">
-        <h1 class="title">
-            Lorem Ipsum Lorem <br />
-            Lorem Ipsum
-        </h1>
-        <div class="buttons">
-            <button class="button">Subscribe</button>
-            <button class="button">Pre-order</button>
-        </div>
+        <h1 class="title">E-bike Express</h1>
+        <p class="subtitle">Ride your adventure</p>
+        <router-link to="/faqs" class="button">Book now</router-link>
     </header>
 </template>
 
@@ -23,8 +18,6 @@
     place-content: end center;
     padding-block: 2rem;
     padding-inline: var(--mobile-padding-inline);
-    display: grid;
-    row-gap: 1rem;
     text-align: center;
 }
 
@@ -33,20 +26,26 @@
     line-height: 130%;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.subtitle {
+    color: var(--tertiary-color);
+    font-size: var(--fs-md);
+    opacity: 70%;
 }
 
 .button {
     background-color: unset;
-    border: unset;
     padding-block: 0.5rem;
-    padding-inline: 1.5rem;
+    padding-inline: 2rem;
     border-radius: 2rem;
     font-weight: 500;
     flex: 1;
+    color: var(--tertiary-color);
+    border: 1px solid var(--tertiary-color);
+    margin-top: 1rem;
+    text-decoration: none;
+    display: block;
+    max-width: fit-content;
+    margin-inline: auto;
 }
 
 .button:nth-child(1) {

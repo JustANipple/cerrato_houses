@@ -5,21 +5,12 @@ import House from './House.vue'
 <template>
     <section class="discover">
         <div class="discoverContainer">
-            <h2>Discover our houses</h2>
+            <h2>Discover our house</h2>
             <div class="houses">
                 <House
                     :image="'/living_room.JPG'"
-                    :price="'211'"
-                    :title="'Casa di Guarene'"
-                    :address="'Guarene, 12050, CN, Italy'"
-                    :beds="'1'"
-                    :baths="'1'"
-                    :sqft="'60'"
-                />
-                <House
-                    :image="'/window_view.JPG'"
-                    :price="'211'"
-                    :title="'Casa di Guarene'"
+                    :price="'140'"
+                    :title="'Vista Langhe'"
                     :address="'Guarene, 12050, CN, Italy'"
                     :beds="'1'"
                     :baths="'1'"
