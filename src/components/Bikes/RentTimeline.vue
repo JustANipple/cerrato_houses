@@ -11,8 +11,8 @@ import { FaBicycle, FaPhone, FaMapPin, FaCube } from 'vue-icons-plus/fa'
                     Straightforward steps to get your dream bike
                 </h2>
                 <p>
-                    In Warsaw, our luxury bike fleet boasts all major
-                    brands. with FREE delivery
+                    Discover Langhe and Roero in the best way: explore on
+                    your own or join our guided tours
                 </p>
             </div>
             <div class="timeline">

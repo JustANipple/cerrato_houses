@@ -54,7 +54,7 @@ const isOpen = ref(false)
 
 .description {
     opacity: 60%;
-    max-height: 10rem;
+    max-height: 11rem;
     overflow: hidden;
 }
 

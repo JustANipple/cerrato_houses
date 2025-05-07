@@ -6,7 +6,7 @@ import Feature from './Feature.vue'
 <template>
     <section class="featureSection">
         <div class="featureSectionContainer">
-            <h2 class="title">Your next adventure starts</h2>
+            <h2 class="title">Your next adventure starts here</h2>
             <div class="features">
                 <Feature
                     :icon="FaBicycle"

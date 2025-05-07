@@ -1,10 +1,49 @@
-<script setup></script>
+<script setup>
+import BikeComponent from './BikeComponent.vue'
+import { PiEngineFill } from 'vue-icons-plus/pi'
+import { GrBike } from 'vue-icons-plus/gr'
+import { BiSolidBattery } from 'vue-icons-plus/bi'
+import { BsGearFill } from 'vue-icons-plus/bs'
+import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
+</script>
 
 <template>
     <header class="header">
         <h1 class="title">E-bike Express</h1>
         <p class="subtitle">Ride your adventure</p>
         <router-link to="/faqs" class="button">Book now</router-link>
+        <div class="components">
+            <BikeComponent
+                :icon="PiEngineFill"
+                :name="'Motor'"
+                :model="'Bosh Performance 3'"
+            />
+            <BikeComponent
+                :icon="GrBike"
+                :name="'Chassis'"
+                :model="'Alluminium Superlite 6061'"
+            />
+            <BikeComponent
+                :icon="BiSolidBattery"
+                :name="'Battery'"
+                :model="'Bosch 625Wh'"
+            />
+            <BikeComponent
+                :icon="MdSmartScreen"
+                :name="'Display'"
+                :model="'Bosch Purion 200 digital'"
+            />
+            <BikeComponent
+                :icon="BsGearFill"
+                :name="'Shifter'"
+                :model="'Shimano'"
+            />
+            <BikeComponent
+                :icon="MdFiberSmartRecord"
+                :name="'Material'"
+                :model="'Carbon fiber C:62'"
+            />
+        </div>
     </header>
 </template>
 
@@ -58,6 +97,10 @@
     background-color: var(--tertiary-color);
 }
 
+.components {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
     .header {
         background:
@@ -70,11 +113,16 @@
                 no-repeat;
         height: 550px;
         padding-block: 3rem;
+        position: relative;
     }
 
     .button {
         padding-inline: 2rem;
         font-size: var(--fs-md);
+    }
+
+    .components {
+        display: block;
     }
 }
 </style>
