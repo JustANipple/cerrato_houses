@@ -8,43 +8,57 @@ import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
 </script>
 
 <template>
-    <header class="header">
-        <h1 class="title">E-bike Express</h1>
-        <p class="subtitle">Ride your adventure</p>
-        <router-link to="/faqs" class="button">Book now</router-link>
-        <div class="components">
-            <BikeComponent
-                :icon="PiEngineFill"
-                :name="'Motor'"
-                :model="'Bosh Performance 3'"
-            />
-            <BikeComponent
-                :icon="GrBike"
-                :name="'Chassis'"
-                :model="'Alluminium Superlite 6061'"
-            />
-            <BikeComponent
-                :icon="BiSolidBattery"
-                :name="'Battery'"
-                :model="'Bosch 625Wh'"
-            />
-            <BikeComponent
-                :icon="MdSmartScreen"
-                :name="'Display'"
-                :model="'Bosch Purion 200 digital'"
-            />
-            <BikeComponent
-                :icon="BsGearFill"
-                :name="'Shifter'"
-                :model="'Shimano'"
-            />
-            <BikeComponent
-                :icon="MdFiberSmartRecord"
-                :name="'Material'"
-                :model="'Carbon fiber C:62'"
-            />
-        </div>
-    </header>
+    <Transition appear name="header">
+        <header class="header">
+            <h1 class="title">E-bike Express</h1>
+            <p class="subtitle">Ride your adventure</p>
+            <router-link to="/faqs" class="button">Book now</router-link>
+            <div class="components">
+                <Transition appear name="componentOne">
+                    <BikeComponent
+                        :icon="PiEngineFill"
+                        :name="'Motor'"
+                        :model="'Bosh Performance 3'"
+                    />
+                </Transition>
+                <Transition appear name="componentTwo">
+                    <BikeComponent
+                        :icon="GrBike"
+                        :name="'Chassis'"
+                        :model="'Alluminium Superlite 6061'"
+                    />
+                </Transition>
+                <Transition appear name="componentThree">
+                    <BikeComponent
+                        :icon="BiSolidBattery"
+                        :name="'Battery'"
+                        :model="'Bosch 625Wh'"
+                    />
+                </Transition>
+                <Transition appear name="componentFour">
+                    <BikeComponent
+                        :icon="MdSmartScreen"
+                        :name="'Display'"
+                        :model="'Bosch Purion 200 digital'"
+                    />
+                </Transition>
+                <Transition appear name="componentFive">
+                    <BikeComponent
+                        :icon="BsGearFill"
+                        :name="'Shifter'"
+                        :model="'Shimano'"
+                    />
+                </Transition>
+                <Transition appear name="componentSix">
+                    <BikeComponent
+                        :icon="MdFiberSmartRecord"
+                        :name="'Material'"
+                        :model="'Carbon fiber C:62'"
+                    />
+                </Transition>
+            </div>
+        </header>
+    </Transition>
 </template>
 
 <style scoped>
@@ -123,6 +137,122 @@ import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
 
     .components {
         display: block;
+    }
+
+    /* Animations */
+    .header-enter-from {
+        transform: translateY(-700px);
+    }
+
+    .header-enter-active {
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .header-enter-to {
+        transform: translateY(0px);
+    }
+
+    /* Component one */
+    .componentOne-enter-from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    .componentOne-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 0s;
+    }
+
+    .componentOne-enter-to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    /* Component two */
+    .componentTwo-enter-from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    .componentTwo-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 0.25s;
+    }
+
+    .componentTwo-enter-to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    /* Component three */
+    .componentThree-enter-from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .componentThree-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 0.5s;
+    }
+
+    .componentThree-enter-to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    /* Component four */
+    .componentFour-enter-from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    .componentFour-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 0.75s;
+    }
+
+    .componentFour-enter-to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    /* Component five */
+    .componentFive-enter-from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    .componentFive-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 1s;
+    }
+
+    .componentFive-enter-to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    /* Component six */
+    .componentSix-enter-from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .componentSix-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+        transition-delay: 1.25s;
+    }
+
+    .componentSix-enter-to {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
 </style>

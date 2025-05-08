@@ -6,44 +6,54 @@ import { FaBicycle, FaPhone, FaMapPin, FaCube } from 'vue-icons-plus/fa'
 <template>
     <section class="rentTimeline">
         <div class="rentTimelineContainer">
-            <div class="intro">
-                <h2 class="title">
-                    Straightforward steps to get your dream bike
-                </h2>
-                <p>
-                    Discover Langhe and Roero in the best way: explore on
-                    your own or join our guided tours
-                </p>
-            </div>
+            <Transition appear name="intro">
+                <div class="intro">
+                    <h2 class="title">
+                        Straightforward steps to get your dream bike
+                    </h2>
+                    <p>
+                        Discover Langhe and Roero in the best way: explore
+                        on your own or join our guided tours
+                    </p>
+                </div>
+            </Transition>
             <div class="timeline">
-                <TimelineStep
-                    :number="1"
-                    :icon="FaPhone"
-                    :title="'Book Your Bike'"
-                    :description="'Write an email or call us to reserve your bike'"
-                    :isOdd="false"
-                />
-                <TimelineStep
-                    :number="2"
-                    :icon="FaBicycle"
-                    :title="'Pick Up Your Bike'"
-                    :description="'We deliver your bike to your doorstep'"
-                    :isOdd="true"
-                />
-                <TimelineStep
-                    :number="3"
-                    :icon="FaMapPin"
-                    :title="'Choose your journey'"
-                    :description="'Make your trip unforgettable by riding through Langhe'"
-                    :isOdd="false"
-                />
-                <TimelineStep
-                    :number="4"
-                    :icon="FaCube"
-                    :title="'Get Your Bike Back'"
-                    :description="'We deliver your bike back to our warehouse'"
-                    :isOdd="true"
-                />
+                <Transition appear name="stepOne">
+                    <TimelineStep
+                        :number="1"
+                        :icon="FaPhone"
+                        :title="'Book Your Bike'"
+                        :description="'Write an email or call us to reserve your bike'"
+                        :isOdd="false"
+                    />
+                </Transition>
+                <Transition appear name="stepTwo">
+                    <TimelineStep
+                        :number="2"
+                        :icon="FaBicycle"
+                        :title="'Pick Up Your Bike'"
+                        :description="'We deliver your bike to your doorstep'"
+                        :isOdd="true"
+                    />
+                </Transition>
+                <Transition appear name="stepThree">
+                    <TimelineStep
+                        :number="3"
+                        :icon="FaMapPin"
+                        :title="'Choose your journey'"
+                        :description="'Make your trip unforgettable by riding through Langhe'"
+                        :isOdd="false"
+                    />
+                </Transition>
+                <Transition appear name="stepFour">
+                    <TimelineStep
+                        :number="4"
+                        :icon="FaCube"
+                        :title="'Get Your Bike Back'"
+                        :description="'We deliver your bike back to our warehouse'"
+                        :isOdd="true"
+                    />
+                </Transition>
             </div>
         </div>
     </section>
@@ -98,5 +108,54 @@ import { FaBicycle, FaPhone, FaMapPin, FaCube } from 'vue-icons-plus/fa'
         align-items: flex-start;
         gap: unset;
     }
+}
+
+/* Animations */
+.intro-enter-from {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.intro-enter-active {
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+}
+.intro-enter-to {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.stepOne-enter-from,
+.stepThree-enter-from {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.stepOne-enter-active,
+.stepThree-enter-active {
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+}
+.stepOne-enter-to,
+.stepThree-enter-to {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.stepTwo-enter-from,
+.stepFour-enter-from {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.stepTwo-enter-active,
+.stepFour-enter-active {
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+}
+.stepTwo-enter-to,
+.stepFour-enter-to {
+    transform: translateX(0);
+    opacity: 1;
 }
 </style>

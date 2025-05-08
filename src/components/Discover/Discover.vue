@@ -5,18 +5,22 @@ import House from './House.vue'
 <template>
     <section class="discover">
         <div class="discoverContainer">
-            <h2>Discover our house</h2>
-            <div class="houses">
-                <House
-                    :image="'/living_room.JPG'"
-                    :price="'140'"
-                    :title="'Vista Langhe'"
-                    :address="'Guarene, 12050, CN, Italy'"
-                    :beds="'1'"
-                    :baths="'1'"
-                    :sqft="'60'"
-                />
-            </div>
+            <Transition appear name="title">
+                <h2>Discover our house</h2>
+            </Transition>
+            <Transition appear name="house">
+                <div class="houses">
+                    <House
+                        :image="'/living_room.JPG'"
+                        :price="'140'"
+                        :title="'Vista Langhe'"
+                        :address="'Guarene, 12050, CN, Italy'"
+                        :beds="'1'"
+                        :baths="'1'"
+                        :sqft="'60'"
+                    />
+                </div>
+            </Transition>
         </div>
     </section>
 </template>
@@ -70,5 +74,38 @@ h2 {
         justify-content: flex-start;
         align-items: center;
     }
+}
+
+/* Animation */
+.title-enter-from {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.title-enter-active {
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+}
+
+.title-enter-to {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.house-enter-from {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.house-enter-active {
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
+}
+
+.house-enter-to {
+    transform: translateY(0);
+    opacity: 1;
 }
 </style>

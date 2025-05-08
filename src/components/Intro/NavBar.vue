@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import NavList from './NavList.vue'
-import router from '@/router'
 
 const isOpen = ref(false)
 
@@ -17,52 +16,54 @@ function handleOpen(value) {
 
 <template>
     <nav class="nav">
-        <div class="navContainer">
-            <router-link to="/" class="logoContainer">
-                <img
-                    src="/logo.svg"
-                    alt="cerrato houses logo"
-                    class="logo"
+        <Transition appear name="nav">
+            <div class="navContainer">
+                <router-link to="/" class="logoContainer">
+                    <img
+                        src="/logo.svg"
+                        alt="cerrato houses logo"
+                        class="logo"
+                        :class="{
+                            open: isOpen,
+                        }"
+                    />
+                </router-link>
+                <NavList
                     :class="{
-                        open: isOpen,
+                        navEnterActive: isOpen,
+                        navLeaveActive: !isOpen,
                     }"
+                    @close="handleOpen"
                 />
-            </router-link>
-            <NavList
-                :class="{
-                    navEnterActive: isOpen,
-                    navLeaveActive: !isOpen,
-                }"
-                @close="handleOpen"
-            />
-            <button class="button" @click="handleOpen(!isOpen)">
-                <svg
-                    v-if="!isOpen"
-                    class="icon"
-                    :class="{ open: isOpen }"
-                    aria-hidden="true"
-                    viewBox="-51.2 -51.2 614.4 614.4"
-                >
-                    <path
-                        d="M80 96h352v32H80zM80 240h352v32H80zM80 384h352v32H80z"
-                    ></path>
-                </svg>
-                <svg
-                    v-else
-                    class="icon"
-                    :class="{ open: isOpen }"
-                    aria-hidden="true"
-                    viewBox="0 0 512 512"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="32"
-                        d="M368 368L144 144M368 144L144 368"
-                    ></path>
-                </svg>
-            </button>
-        </div>
+                <button class="button" @click="handleOpen(!isOpen)">
+                    <svg
+                        v-if="!isOpen"
+                        class="icon"
+                        :class="{ open: isOpen }"
+                        aria-hidden="true"
+                        viewBox="-51.2 -51.2 614.4 614.4"
+                    >
+                        <path
+                            d="M80 96h352v32H80zM80 240h352v32H80zM80 384h352v32H80z"
+                        ></path>
+                    </svg>
+                    <svg
+                        v-else
+                        class="icon"
+                        :class="{ open: isOpen }"
+                        aria-hidden="true"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="32"
+                            d="M368 368L144 144M368 144L144 368"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </Transition>
     </nav>
 </template>
 
@@ -171,6 +172,21 @@ function handleOpen(value) {
 
     .button {
         display: none;
+    }
+
+    /* Animations */
+    .nav-enter-from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .nav-enter-active {
+        transition: all 1s ease-out;
+    }
+
+    .nav-enter-to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>

@@ -20,33 +20,37 @@ const props = defineProps({
 <template>
     <header class="header">
         <div class="headerContainer">
-            <div class="intro">
-                <h1>{{ props.title }}</h1>
-                <small>{{ props.description }}</small>
-                <div class="externalLinks">
-                    <a
-                        href="https://www.airbnb.com/rooms/988230275664339719"
-                        target="_blank"
-                        class="externalLinkOne"
-                        ><FaAirbnb /> Book</a
-                    >
-                    <a
-                        href="https://www.booking.com/hotel/it/vista-langhe-cerratohouses.it.html"
-                        target="_blank"
-                        class="externalLinkTwo"
-                    >
-                        <img
-                            src="/booking_icon.svg"
-                            alt="booking icon"
-                            class="bookingIcon"
-                        />
-                        Book</a
-                    >
+            <Transition appear name="introText">
+                <div class="intro">
+                    <h1>{{ props.title }}</h1>
+                    <small>{{ props.description }}</small>
+                    <div class="externalLinks">
+                        <a
+                            href="https://www.airbnb.com/rooms/988230275664339719"
+                            target="_blank"
+                            class="externalLinkOne"
+                            ><FaAirbnb /> Book</a
+                        >
+                        <a
+                            href="https://www.booking.com/hotel/it/vista-langhe-cerratohouses.it.html"
+                            target="_blank"
+                            class="externalLinkTwo"
+                        >
+                            <img
+                                src="/booking_icon.svg"
+                                alt="booking icon"
+                                class="bookingIcon"
+                            />
+                            Book</a
+                        >
+                    </div>
                 </div>
-            </div>
-            <div class="isometric">
-                <img :src="props.imageUrl" alt="isometric room" />
-            </div>
+            </Transition>
+            <Transition appear name="introImage">
+                <div class="isometric">
+                    <img :src="props.imageUrl" alt="isometric room" />
+                </div>
+            </Transition>
         </div>
     </header>
 </template>
@@ -184,5 +188,34 @@ small {
         left: unset;
         margin-left: auto;
     }
+}
+
+/* Animations */
+.introText-enter-from {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.introText-enter-active {
+    transition: all 1s ease-out;
+}
+
+.introText-enter-to {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.introImage-enter-from {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.introImage-enter-active {
+    transition: all 1s ease-out;
+}
+
+.introImage-enter-to {
+    transform: translateX(0);
+    opacity: 1;
 }
 </style>

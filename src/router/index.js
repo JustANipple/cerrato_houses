@@ -1,12 +1,10 @@
-import Home from '@/views/Home.vue'
 import Layout from '@/views/AppLayout.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import FaqsView from '@/views/FaqsView.vue'
-import BikesView from '@/views/BikesView.vue'
-import HouseView from '@/views/HouseView.vue'
+
+const delay = (t) => new Promise((r) => setTimeout(r, t))
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
@@ -15,7 +13,7 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Home',
-                    component: Home,
+                    component: () => import('@/views/Home.vue'),
                 },
             ],
         },
@@ -26,7 +24,7 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Faqs',
-                    component: FaqsView,
+                    component: () => import('@/views/FaqsView.vue'),
                 },
             ],
         },
@@ -37,7 +35,7 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'Bikes',
-                    component: BikesView,
+                    component: () => import('@/views/BikesView.vue'),
                 },
             ],
         },
@@ -48,13 +46,18 @@ const router = createRouter({
                 {
                     path: '',
                     name: 'House',
-                    component: HouseView,
+                    component: () => import('@/views/HouseView.vue'),
                 },
             ],
         },
     ],
-    scrollBehavior(savedPosition) {
-        return savedPosition || { top: 0, behavior: 'smooth' }
+    async scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            await delay(0)
+            return { top: 0, behavior: 'smooth' }
+        }
     },
 })
 

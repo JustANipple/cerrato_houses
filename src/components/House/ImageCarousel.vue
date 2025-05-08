@@ -41,19 +41,21 @@ function showPreview(value) {
 <template>
     <div class="carousel">
         <div class="carouselContainer">
-            <ul class="images">
-                <li
-                    class="image"
-                    v-for="(image, index) in props.images"
-                    :key="image"
-                    :style="{
-                        transform: currentPosition,
-                    }"
-                    @click="showPreview(index)"
-                >
-                    <img :src="image" />
-                </li>
-            </ul>
+            <Transition appear name="images">
+                <ul class="images">
+                    <li
+                        class="image"
+                        v-for="(image, index) in props.images"
+                        :key="image"
+                        :style="{
+                            transform: currentPosition,
+                        }"
+                        @click="showPreview(index)"
+                    >
+                        <img :src="image" />
+                    </li>
+                </ul>
+            </Transition>
             <button class="left" @click="changeImage(-1)">
                 <FaAngleLeft />
             </button>
@@ -270,6 +272,25 @@ img {
 
     .dots {
         display: none;
+    }
+
+    /* Animations */
+    .images-enter-from {
+        transform-origin: center;
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .images-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+    }
+
+    .images-enter-to {
+        transform-origin: center;
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
 </style>

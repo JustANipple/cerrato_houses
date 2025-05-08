@@ -6,28 +6,36 @@ import Feature from './Feature.vue'
 <template>
     <section class="featureSection">
         <div class="featureSectionContainer">
-            <h2 class="title">Your next adventure starts here</h2>
+            <Transition appear name="title">
+                <h2 class="title">Your next adventure starts here</h2>
+            </Transition>
             <div class="features">
-                <Feature
-                    :icon="FaBicycle"
-                    :title="'Get your bike now'"
-                    :description="'Explore winding country roads, charming villages, and panoramic views of Langhe and Roero'"
-                    :link="'/bikes'"
-                />
+                <Transition appear name="featureOne">
+                    <Feature
+                        :icon="FaBicycle"
+                        :title="'Get your bike now'"
+                        :description="'Explore winding country roads, charming villages, and panoramic views of Langhe and Roero'"
+                        :link="'/bikes'"
+                    />
+                </Transition>
                 <hr class="divider" />
-                <Feature
-                    :icon="FaWineGlass"
-                    :title="'Truffle Hunts & Fine Wines Await'"
-                    :description="'Uncover the secrets of truffle hunting, guided tours of historic cellars & wine tastings'"
-                    :link="'/faqs'"
-                />
+                <Transition appear name="featureTwo">
+                    <Feature
+                        :icon="FaWineGlass"
+                        :title="'Truffle Hunts & Fine Wines Await'"
+                        :description="'Uncover the secrets of truffle hunting, guided tours of historic cellars & wine tastings'"
+                        :link="'/faqs'"
+                    />
+                </Transition>
                 <hr class="divider" />
-                <Feature
-                    :icon="FaCarSide"
-                    :title="'Private Transfers on Demand'"
-                    :description="'Travel with our NCC service, available for private transfers, events and more'"
-                    :link="'/faqs'"
-                />
+                <Transition appear name="featureThree">
+                    <Feature
+                        :icon="FaCarSide"
+                        :title="'Private Transfers on Demand'"
+                        :description="'Travel with our NCC service, available for private transfers, events and more'"
+                        :link="'/faqs'"
+                    />
+                </Transition>
             </div>
         </div>
     </section>
@@ -95,6 +103,71 @@ import Feature from './Feature.vue'
         border-top: unset;
         flex: 0.125;
         height: 100%;
+    }
+
+    /* Animations */
+    .title-enter-from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .title-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
+
+    .title-enter-to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .featureOne-enter-from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .featureOne-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
+
+    .featureOne-enter-to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .featureTwo-enter-from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .featureTwo-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
+
+    .featureTwo-enter-to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .featureThree-enter-from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .featureThree-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
+
+    .featureThree-enter-to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>
