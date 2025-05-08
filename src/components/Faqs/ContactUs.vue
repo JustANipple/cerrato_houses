@@ -53,37 +53,41 @@ function handleFormSubmit() {
 <template>
     <section class="contactUs">
         <div class="contactUsContainer">
-            <div class="header">
-                <h2 class="title">Contact us</h2>
-                <p class="description">
-                    It is very important for us to keep touch with you, so
-                    we are always ready to answer any question that
-                    interests you.
-                </p>
-            </div>
-            <form class="form" @submit.prevent="handleFormSubmit">
-                <input
-                    type="text"
-                    placeholder="Name"
-                    v-model="formData.name"
-                    required
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    v-model="formData.email"
-                    required
-                />
-                <textarea
-                    placeholder="Message"
-                    v-model="formData.message"
-                    required
-                ></textarea>
-                <button type="submit">Submit</button>
-                <p v-if="statusMessage" class="status-message">
-                    {{ statusMessage }}
-                </p>
-            </form>
+            <Transition appear name="header">
+                <div class="header">
+                    <h2 class="title">Contact us</h2>
+                    <p class="description">
+                        It is very important for us to keep touch with you,
+                        so we are always ready to answer any question that
+                        interests you.
+                    </p>
+                </div>
+            </Transition>
+            <Transition appear name="form">
+                <form class="form" @submit.prevent="handleFormSubmit">
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        v-model="formData.name"
+                        required
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        v-model="formData.email"
+                        required
+                    />
+                    <textarea
+                        placeholder="Message"
+                        v-model="formData.message"
+                        required
+                    ></textarea>
+                    <button type="submit">Submit</button>
+                    <p v-if="statusMessage" class="status-message">
+                        {{ statusMessage }}
+                    </p>
+                </form>
+            </Transition>
         </div>
     </section>
 </template>
@@ -193,6 +197,39 @@ button {
         flex: 0.75;
         width: 100%;
         max-width: 450px;
+    }
+
+    /* Animation */
+    .header-enter-from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    .header-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+    }
+
+    .header-enter-to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .form-enter-from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .form-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+    }
+
+    .form-enter-to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 </style>

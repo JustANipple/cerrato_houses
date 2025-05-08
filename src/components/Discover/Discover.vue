@@ -74,38 +74,38 @@ h2 {
         justify-content: flex-start;
         align-items: center;
     }
-}
 
-/* Animation */
-.title-enter-from {
-    transform: translateY(-100%);
-    opacity: 0;
-}
+    /* Animation */
+    .title-enter-from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 
-.title-enter-active {
-    transition:
-        transform 1s ease-out,
-        opacity 1s ease-out;
-}
+    .title-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
 
-.title-enter-to {
-    transform: translateY(0);
-    opacity: 1;
-}
+    .title-enter-to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-.house-enter-from {
-    transform: translateY(100%);
-    opacity: 0;
-}
+    .house-enter-from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 
-.house-enter-active {
-    transition:
-        transform 1s ease-out,
-        opacity 1s ease-out;
-}
+    .house-enter-active {
+        transition:
+            transform 1s ease-out,
+            opacity 1s ease-out;
+    }
 
-.house-enter-to {
-    transform: translateY(0);
-    opacity: 1;
+    .house-enter-to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 </style>

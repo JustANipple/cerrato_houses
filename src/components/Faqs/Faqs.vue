@@ -6,30 +6,40 @@ import Faq from './Faq.vue'
 <template>
     <section class="faqs">
         <div class="faqsContainer">
-            <div class="header">
-                <FaQuestion />
-                <h2 class="title">FAQs</h2>
-            </div>
+            <Transition appear name="header">
+                <div class="header">
+                    <FaQuestion />
+                    <h2 class="title">FAQs</h2>
+                </div>
+            </Transition>
             <div class="faqList">
-                <Faq
-                    :title="'What is frontendmentor and how will it help me?'"
-                    :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
-                />
+                <Transition appear name="faqOne">
+                    <Faq
+                        :title="'What is frontendmentor and how will it help me?'"
+                        :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
+                    />
+                </Transition>
                 <div class="divider"></div>
-                <Faq
-                    :title="'What is frontendmentor and how will it help me?'"
-                    :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
-                />
+                <Transition appear name="faqTwo">
+                    <Faq
+                        :title="'What is frontendmentor and how will it help me?'"
+                        :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
+                    />
+                </Transition>
                 <div class="divider"></div>
-                <Faq
-                    :title="'What is frontendmentor and how will it help me?'"
-                    :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
-                />
+                <Transition appear name="faqThree">
+                    <Faq
+                        :title="'What is frontendmentor and how will it help me?'"
+                        :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
+                    />
+                </Transition>
                 <div class="divider"></div>
-                <Faq
-                    :title="'What is frontendmentor and how will it help me?'"
-                    :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
-                />
+                <Transition appear name="faqFour">
+                    <Faq
+                        :title="'What is frontendmentor and how will it help me?'"
+                        :description="'Frontendmentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS and JavaScript. Its suitable for all levels and ideal for portfolio building'"
+                    />
+                </Transition>
             </div>
         </div>
     </section>
@@ -82,6 +92,64 @@ import Faq from './Faq.vue'
     .faqsContainer {
         width: 100%;
         max-width: var(--max-w);
+    }
+
+    /* Animations */
+    .header-enter-from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .header-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+    }
+
+    .header-enter-to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .faqOne-enter-from,
+    .faqTwo-enter-from,
+    .faqThree-enter-from,
+    .faqFour-enter-from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    .faqOne-enter-active,
+    .faqTwo-enter-active,
+    .faqThree-enter-active,
+    .faqFour-enter-active {
+        transition:
+            transform 1s ease-in-out,
+            opacity 1s ease-in-out;
+    }
+
+    .faqOne-enter-to,
+    .faqTwo-enter-to,
+    .faqThree-enter-to,
+    .faqFour-enter-to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .faqOne-enter-active {
+        transition-delay: 0.125s;
+    }
+
+    .faqTwo-enter-active {
+        transition-delay: 0.25s;
+    }
+
+    .faqThree-enter-active {
+        transition-delay: 0.5s;
+    }
+
+    .faqFour-enter-active {
+        transition-delay: 0.75s;
     }
 }
 </style>

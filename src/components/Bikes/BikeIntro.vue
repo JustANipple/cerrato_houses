@@ -140,18 +140,6 @@ import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
     }
 
     /* Animations */
-    .header-enter-from {
-        transform: translateY(-700px);
-    }
-
-    .header-enter-active {
-        transition: transform 0.75s ease-in-out;
-    }
-
-    .header-enter-to {
-        transform: translateY(0px);
-    }
-
     /* Component one */
     .componentOne-enter-from {
         transform: translateY(-100px);
@@ -254,5 +242,18 @@ import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+/* Animation */
+.header-enter-from {
+    transform: translateY(-700px);
+}
+
+.header-enter-active {
+    transition: transform 0.75s ease-in-out;
+}
+
+.header-enter-to {
+    transform: translateY(0px);
 }
 </style>

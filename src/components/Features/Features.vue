@@ -122,52 +122,38 @@ import Feature from './Feature.vue'
         opacity: 1;
     }
 
-    .featureOne-enter-from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    .featureOne-enter-active {
-        transition:
-            transform 1s ease-out,
-            opacity 1s ease-out;
-    }
-
-    .featureOne-enter-to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .featureTwo-enter-from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    .featureTwo-enter-active {
-        transition:
-            transform 1s ease-out,
-            opacity 1s ease-out;
-    }
-
-    .featureTwo-enter-to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
+    .featureOne-enter-from,
+    .featureTwo-enter-from,
     .featureThree-enter-from {
-        transform: translateY(100%);
+        transform: translateX(100%);
         opacity: 0;
     }
 
+    .featureOne-enter-active,
+    .featureTwo-enter-active,
     .featureThree-enter-active {
         transition:
             transform 1s ease-out,
             opacity 1s ease-out;
     }
 
+    .featureOne-enter-to,
+    .featureTwo-enter-to,
     .featureThree-enter-to {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
+    }
+
+    .featureOne-enter-active {
+        transition-delay: 0.125s;
+    }
+
+    .featureTwo-enter-active {
+        transition-delay: 0.25s;
+    }
+
+    .featureThree-enter-active {
+        transition-delay: 0.5s;
     }
 }
 </style>

@@ -283,8 +283,8 @@ img {
 
     .images-enter-active {
         transition:
-            transform 1s ease-in-out,
-            opacity 1s ease-in-out;
+            transform 0.5s ease-in-out,
+            opacity 0.5s ease-in-out;
     }
 
     .images-enter-to {
