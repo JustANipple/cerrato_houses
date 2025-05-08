@@ -197,7 +197,9 @@ small {
 }
 
 .introText-enter-active {
-    transition: all 1s ease-out;
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
 }
 
 .introText-enter-to {
@@ -206,16 +208,18 @@ small {
 }
 
 .introImage-enter-from {
-    transform: translateX(100%);
+    transform: scale(0);
     opacity: 0;
 }
 
 .introImage-enter-active {
-    transition: all 1s ease-out;
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease-out;
 }
 
 .introImage-enter-to {
-    transform: translateX(0);
+    transform: scale(1);
     opacity: 1;
 }
 </style>
