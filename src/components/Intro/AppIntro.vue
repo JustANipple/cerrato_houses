@@ -84,7 +84,7 @@ const props = defineProps({
 .externalLinkOne,
 .externalLinkTwo {
     padding: 0.5rem 1.5rem;
-    background-color: #ee2755;
+    background-color: var(--primary-color);
     color: var(--tertiary-color);
     max-width: fit-content;
     text-decoration: none;
@@ -97,7 +97,8 @@ const props = defineProps({
 }
 
 .externalLinkTwo {
-    background-color: #003b95;
+    background-color: transparent;
+    border: 2px solid var(--tertiary-color);
 }
 
 .bookingIcon {

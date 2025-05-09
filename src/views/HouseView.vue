@@ -54,7 +54,7 @@ const readMore = ref(false)
                         class="externalLinkTwo"
                     >
                         <img
-                            src="/booking_icon.svg"
+                            src="/booking_icon_black.svg"
                             alt="booking icon"
                             class="bookingIcon"
                         />
@@ -248,7 +248,7 @@ const readMore = ref(false)
 .externalLinkOne,
 .externalLinkTwo {
     padding: 0.5rem 1.5rem;
-    background-color: #ee2755;
+    background-color: var(--primary-color);
     color: var(--tertiary-color);
     max-width: fit-content;
     text-decoration: none;
@@ -261,7 +261,9 @@ const readMore = ref(false)
 }
 
 .externalLinkTwo {
-    background-color: #003b95;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .bookingIcon {
