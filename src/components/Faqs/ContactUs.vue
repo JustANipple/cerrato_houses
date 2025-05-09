@@ -231,5 +231,17 @@ button {
         transform: translateX(0);
         opacity: 1;
     }
+
+    button {
+        transition:
+            background-color 0.2s ease-in-out,
+            color 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: var(--tertiary-color);
+        color: var(--primary-color);
+    }
 }
 </style>

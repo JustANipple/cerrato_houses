@@ -1,24 +1,19 @@
 <script setup>
-import {
-    FaInstagram,
-    FaAirbnb,
-    FaWhatsapp,
-    FaBook,
-} from 'vue-icons-plus/fa'
+import { FaInstagram, FaAirbnb } from 'vue-icons-plus/fa'
 </script>
 
 <template>
     <footer class="footer">
         <div class="footerContainer">
             <div class="header">
-                <div class="logo">
+                <router-link to="/" class="logo">
                     <img
                         src="/logo.svg"
                         alt="cerrato houses logo"
                         class="logoImg"
                     />
                     <p>Cerrato Houses</p>
-                </div>
+                </router-link>
                 <div class="socials">
                     <div class="social">
                         <a
@@ -53,7 +48,6 @@ import {
             <div class="linksContainer">
                 <h3 class="title">Useful Links</h3>
                 <div class="links">
-                    <router-link to="/">Home</router-link>
                     <router-link to="/house"
                         >Vista Langhe Home</router-link
                     >
@@ -65,7 +59,13 @@ import {
             <p class="copyright">
                 &copy;{{ new Date().getFullYear() }} | All rights reserved
                 | Site by
-                <a href="https://github.com/JustANipple"> Samuel Prandi</a>
+                <a
+                    href="https://github.com/JustANipple"
+                    target="_blank"
+                    class="repo"
+                >
+                    Samuel Prandi</a
+                >
             </p>
         </div>
     </footer>
@@ -92,6 +92,7 @@ import {
     align-items: center;
     gap: 1rem;
     color: var(--secondary-color);
+    text-decoration: none;
 }
 
 .logoImg {
@@ -156,6 +157,12 @@ import {
     text-align: center;
 }
 
+.repo {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 @media screen and (min-width: 1024px) {
     .footer {
         padding-inline: var(--desktop-padding-inline);
@@ -175,6 +182,50 @@ import {
 
     .copyright {
         padding-top: 1rem;
+    }
+
+    .social {
+        transition:
+            background-color 0.25s ease-in-out,
+            border-color 0.25s ease-in-out;
+        cursor: pointer;
+    }
+
+    .social:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .links a {
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        font-size: var(--fs-base);
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+    }
+
+    .links a:hover::after {
+        width: 100%;
+    }
+
+    .repo {
+        transition: color 0.25s ease-in-out;
+    }
+
+    .repo:hover {
+        color: var(--secondary-color);
     }
 }
 </style>

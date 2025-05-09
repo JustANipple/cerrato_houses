@@ -20,13 +20,13 @@ const isOpen = ref(false)
 </script>
 
 <template>
-    <div class="faq">
+    <div class="faq" @click="isOpen = !isOpen">
         <div class="header">
             <h3 class="title">
                 {{ props.number ? props.number + '&nbsp;&nbsp;' : ''
                 }}{{ props.title }}
             </h3>
-            <button class="button" @click="isOpen = !isOpen">
+            <button class="button">
                 <FaPlus class="icon" v-if="!isOpen" />
                 <FaMinus class="icon" v-else />
             </button>
@@ -89,6 +89,10 @@ const isOpen = ref(false)
 @media screen and (min-width: 1024px) {
     .description {
         padding-right: 4rem;
+    }
+
+    .faq {
+        cursor: pointer;
     }
 }
 </style>

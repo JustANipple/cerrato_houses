@@ -3,9 +3,6 @@
 <template>
     <ul class="navList">
         <hr class="divider" />
-        <RouterLink to="/" class="item" @click="$emit('close')">
-            <li>Home</li>
-        </RouterLink>
         <RouterLink to="/house" class="item" @click="$emit('close')">
             <li>Vista Langhe Home</li>
         </RouterLink>
@@ -69,6 +66,26 @@
 
     .item {
         text-transform: capitalize;
+        position: relative;
+    }
+
+    .item li {
+        padding-block: 0.25rem;
+    }
+
+    .item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+
+    .item:hover::after {
+        width: 100%;
     }
 }
 </style>

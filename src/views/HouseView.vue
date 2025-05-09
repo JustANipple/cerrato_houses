@@ -102,7 +102,10 @@ const readMore = ref(false)
         <div class="houseDescription">
             <div class="descriptionContainer">
                 <h2 class="title">About this place</h2>
-                <p class="description" :class="{ showLess: !readMore }">
+                <p
+                    class="description"
+                    :class="{ showLess: !readMore, showMore: readMore }"
+                >
                     - Welcome to Guarene, in the heart of the Langhe &
                     Roero!
                     <br /><br />
@@ -411,6 +414,16 @@ const readMore = ref(false)
         width: 100%;
         max-width: var(--max-w-t);
         margin-inline: auto;
+    }
+
+    .externalLinkOne,
+    .externalLinkTwo {
+        transition: transform 0.25s ease-out;
+    }
+
+    .externalLinkOne:hover,
+    .externalLinkTwo:hover {
+        transform: scale(1.05);
     }
 }
 </style>

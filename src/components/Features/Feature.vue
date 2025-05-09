@@ -85,5 +85,15 @@ const props = defineProps({
         row-gap: 2rem;
         flex: 1;
     }
+
+    .link {
+        transition: all 0.25s ease-in-out;
+    }
+
+    .link:hover {
+        background-color: var(--tertiary-color);
+        border-color: transparent;
+        font-weight: 600;
+    }
 }
 </style>

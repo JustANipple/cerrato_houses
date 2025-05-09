@@ -173,6 +173,16 @@ small {
         position: relative;
         left: 7rem;
     }
+
+    .externalLinkOne,
+    .externalLinkTwo {
+        transition: transform 0.25s ease-out;
+    }
+
+    .externalLinkOne:hover,
+    .externalLinkTwo:hover {
+        transform: scale(1.05);
+    }
 }
 
 @media screen and (min-width: 1300px) {

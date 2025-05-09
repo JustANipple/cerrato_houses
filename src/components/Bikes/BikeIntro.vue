@@ -242,6 +242,17 @@ import { MdSmartScreen, MdFiberSmartRecord } from 'vue-icons-plus/md'
         transform: translateY(0px);
         opacity: 1;
     }
+
+    .button {
+        transition:
+            background-color 0.25s ease-in-out,
+            color 0.25s ease-in-out;
+    }
+
+    .button:hover {
+        background-color: var(--tertiary-color);
+        color: var(--secondary-color);
+    }
 }
 
 /* Animation */

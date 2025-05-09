@@ -153,5 +153,17 @@ const props = defineProps({
         justify-content: unset;
         gap: 1rem;
     }
+
+    .content {
+        transition:
+            background-color 0.25s ease-in-out,
+            color 0.25s ease-in-out,
+            border-radius 0.25s ease-in-out;
+    }
+
+    .content:hover {
+        background-color: var(--secondary-color);
+        color: var(--tertiary-color);
+    }
 }
 </style>

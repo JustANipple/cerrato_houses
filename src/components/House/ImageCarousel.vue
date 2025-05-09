@@ -292,5 +292,45 @@ img {
         transform: translateY(0%);
         opacity: 1;
     }
+
+    .image {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .image img {
+        transition: all 0.5s ease-in-out;
+        display: block;
+    }
+
+    .image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg);
+    }
+
+    .image:hover::after {
+        animation: shine 0.75s ease-in-out;
+    }
+
+    @keyframes shine {
+        from {
+            left: -75%;
+        }
+        to {
+            left: 125%;
+        }
+    }
 }
 </style>
