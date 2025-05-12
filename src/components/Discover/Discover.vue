@@ -18,6 +18,7 @@ import House from './House.vue'
                         :beds="'1'"
                         :baths="'1'"
                         :sqft="'60'"
+                        :pool="'1'"
                     />
                 </div>
             </Transition>

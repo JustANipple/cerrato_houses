@@ -1,5 +1,10 @@
 <script setup>
-import { FaBed, FaBath, FaExpandArrowsAlt } from 'vue-icons-plus/fa'
+import {
+    FaBed,
+    FaBath,
+    FaExpandArrowsAlt,
+    FaSwimmingPool,
+} from 'vue-icons-plus/fa'
 
 const props = defineProps({
     image: {
@@ -27,6 +32,10 @@ const props = defineProps({
         required: true,
     },
     sqft: {
+        type: String,
+        required: true,
+    },
+    pool: {
         type: String,
         required: true,
     },
@@ -59,6 +68,10 @@ const props = defineProps({
                 <div class="sqft">
                     <FaExpandArrowsAlt />
                     <p>{{ sqft }} sqft</p>
+                </div>
+                <div class="pool">
+                    <FaSwimmingPool />
+                    <p>{{ pool }} Jacuzzi</p>
                 </div>
             </div>
         </div>
@@ -120,12 +133,15 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1rem;
 }
 
 .info div {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    flex-basis: 50%;
 }
 
 .info div svg {
@@ -150,8 +166,12 @@ const props = defineProps({
     }
 
     .info {
-        justify-content: unset;
-        gap: 1rem;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .info div {
+        flex-basis: unset;
     }
 
     .content {

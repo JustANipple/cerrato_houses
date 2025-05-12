@@ -1,5 +1,5 @@
 <script setup>
-import { FaInstagram, FaAirbnb } from 'vue-icons-plus/fa'
+import { FaInstagram, FaAirbnb, FaWhatsapp } from 'vue-icons-plus/fa'
 </script>
 
 <template>
@@ -41,6 +41,11 @@ import { FaInstagram, FaAirbnb } from 'vue-icons-plus/fa'
                             target="_blank"
                         >
                             <FaAirbnb size="18" />
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="tel:+39 331 944 3510">
+                            <FaWhatsapp size="18" />
                         </a>
                     </div>
                 </div>
