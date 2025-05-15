@@ -99,8 +99,7 @@ const props = defineProps({
     z-index: 0;
     top: -1rem;
     background-color: white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
     display: grid;
     row-gap: 0.5rem;
     color: var(--secondary-color);

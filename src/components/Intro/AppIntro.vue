@@ -114,7 +114,7 @@ h1 {
 
 small {
     font-size: var(--fs-md);
-    max-width: 500px;
+    max-width: 15rem;
 }
 
 .button {
@@ -157,6 +157,10 @@ small {
     .intro {
         flex: 1;
         place-content: start;
+    }
+
+    small {
+        max-width: 20rem;
     }
 
     button {
